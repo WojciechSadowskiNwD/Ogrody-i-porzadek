@@ -1,0 +1,35 @@
+/* TopBar.module.scss */
+.topbar {
+	position: sticky;
+	top: 0;
+  padding-top: 5px;
+	backdrop-filter: saturate(180%) blur(8px);
+	will-change: transform;
+	transform: translateY(0);
+	background: rgba(32, 124, 11, 0.9);
+	transition: transform 300ms ease, box-shadow 200ms ease, background 200ms ease;
+	z-index: 1000;
+
+	&.hidden {
+		transform: translateY(-100%);
+	}
+
+	&.scrolled {
+		box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+	}
+}
+
+.inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 12px 20px;
+}
+
+.brand {
+	width: 120px;
+}
+
+
