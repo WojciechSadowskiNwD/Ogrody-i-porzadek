@@ -13,6 +13,7 @@ export const TopBar: React.FC = () => {
 	});
 
 	
+	
 	return (
 		<div
 			className={`${styles.topbar} ${hidden ? styles.hidden : ""} ${
