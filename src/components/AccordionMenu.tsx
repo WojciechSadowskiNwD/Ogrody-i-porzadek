@@ -21,8 +21,17 @@ export default function AccordionMenu({ isOpen }: AccordionMenuProps) {
 	}, [lastY]);
 
 	return (
-		<div className={`${styles.accordionMenu} ${isOpen && !scrollDown ? styles.active : ""}`}>
-			accordion menu
+		<div
+			className={`${styles.accordionMenu} ${
+				isOpen && !scrollDown ? styles.active : ""
+			}`}
+		>
+			<ul className={styles.list}>
+				<li>oferta</li>
+				<li>realizacje</li>
+				<li>o nas</li>
+				<li>kontakt</li>
+			</ul>
 		</div>
 	);
 }

@@ -6,7 +6,9 @@
 	will-change: transform;
 	transform: translateY(0);
 	background: rgba(32, 124, 11, 0.9);
+	background-color:rgb(23, 76, 30);
 	transition: transform 300ms ease, box-shadow 200ms ease, background 200ms ease;
+	overflow-x: hidden;
 	z-index: 900;
 
 	&.hidden {
@@ -29,6 +31,5 @@
 }
 
 .brand {
-	// width: 120px;
 	width: 140px;
 }

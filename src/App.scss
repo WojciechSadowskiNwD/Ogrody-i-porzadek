@@ -4,10 +4,12 @@
 	padding: 0;
 }
 html {
+	font-family: "Dosis", sans-serif;
 	font-size: 62.5%; /* 10px */
 }
 #root {
 	max-width: 1280px;
+	width: 100vw;
 	height: 2000px;
 	color: whitesmoke;
 }
