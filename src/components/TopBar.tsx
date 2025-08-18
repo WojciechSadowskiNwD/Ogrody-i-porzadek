@@ -1,7 +1,7 @@
 import { useAutoHideTopbar } from "../hooks/useAutoHideTopbar";
 import useDesktopNav from "../hooks/useDesktopNav";
 import MobileNav from "./MobileNav";
-import DestopNav from "./DesktopNav";
+import DesktopNav from "./DesktopNav";
 import logo from "../assets/logo_v2.1.png";
 import styles from "./TopBar.module.scss";
 
@@ -23,7 +23,7 @@ export const TopBar: React.FC = () => {
 			<div className={styles.inner}>
 				<img className={styles.brand} src={logo} alt="logo company" />
 
-				{isDesktop ? <DestopNav /> : <MobileNav />}
+				{isDesktop ? <DesktopNav /> : <MobileNav />}
 			</div>
 		</div>
 	);

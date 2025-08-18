@@ -1,12 +1,15 @@
+@import "../styles/global.scss";
+
 .btn_valuation {
-    margin-top: 3.5rem;
-    padding: 1.3rem 2.2rem;
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: .2rem;text-transform: uppercase;
-    border: none;
-    color: #fff;
-    background-color:rgb(23, 76, 30);
-    transition: .3s;
-    cursor: pointer;
+	margin-top: 3.5rem;
+	padding: 1.3rem 2.2rem;
+	font-size: 1.5rem;
+	font-weight: 700;
+	letter-spacing: 0.2rem;
+	text-transform: uppercase;
+	border: none;
+	color: #fff;
+	background-color: $primary-color;
+	transition: 0.3s;
+	cursor: pointer;
 }

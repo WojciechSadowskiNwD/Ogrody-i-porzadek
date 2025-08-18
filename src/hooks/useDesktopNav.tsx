@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 
 export default function useDesktopNav(breakpoint: number = 768){
-    const [isDesktop, setIsDesktop] = useState(window.innerWidth >= breakpoint);
+    const [isDesktop, setIsDesktop] = useState<boolean>(window.innerWidth >= breakpoint);
 
-    useEffect(() => {
+        useEffect(() => {
 		const handleResize = () => {
-			setIsDesktop(window.innerWidth < 768);
+			setIsDesktop(window.innerWidth >= 768);
 		};
+
+        handleResize();
 
         window.addEventListener("resize", handleResize);
         

@@ -1,3 +1,5 @@
+@import "../styles/global.scss";
+
 .header {
 	position: relative;
 	isolation: isolate;
@@ -5,10 +7,10 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	// width: 100%;
 	height: 400px;
 	padding: 20px;
 	text-align: center;
+	background-image: url("../assets/ogród-kwiaty.jpg");
 	background-image: url("../assets/header-photo-2.png");
 	background-size: cover;
 	background-position: center;
@@ -18,7 +20,7 @@
 		content: "";
 		position: absolute;
 		inset: 0;
-		background-color: rgba(19, 93, 6, 0.333);
+		background-color: $hero-shadow-color;
 		z-index: 0;
 		pointer-events: none;
 	}
@@ -34,5 +36,5 @@
 	line-height: 1.4;
 	letter-spacing: .3rem;
 	text-shadow: 3px 3px 5px #000;
-	color: #ffffffdf;
+	color: $text-color;
 }

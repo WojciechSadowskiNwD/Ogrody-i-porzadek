@@ -1,3 +1,5 @@
+@import "../styles/global.scss";
+
 .accordionMenu {
 	display: flex;
 	align-items: center;
@@ -9,7 +11,7 @@
 	height: 300px;
 	transform: translateY(-130%);
 	color: #000;
-	background-color: rgba(27, 105, 10, 0.911);
+	background-color: $mobile-accordion-color;
 	transition: 0.7s;
 	z-index: 899;
 }
@@ -27,7 +29,6 @@
 	width: 70%;
 	color: #fff;
 	text-shadow: 1px 1px 5px #000000ca;
-	// background-color: #fff;
 
 	li {
 		padding: 0.9rem;
