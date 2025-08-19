@@ -34,3 +34,12 @@
 		padding: 0.9rem;
 	}
 }
+
+@include responsive(sm) {
+	.list{
+		li {
+		padding: 1.3rem;
+		letter-spacing: .1rem;
+	}
+	}
+}

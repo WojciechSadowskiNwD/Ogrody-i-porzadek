@@ -1,5 +1,16 @@
 @import "../styles/global.scss";
 
+// This element is intended to fill the white space behind the navigation bar
+.backgroundBar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100px;
+	background-color: $primary-colorBgc;
+}
+
 .topbar {
 	position: sticky;
 	top: 0;
@@ -7,17 +18,19 @@
 	backdrop-filter: saturate(180%) blur(8px);
 	will-change: transform;
 	transform: translateY(0);
-	background-color:$primary-color;
+	background-color: $primary-color;
 	transition: transform 300ms ease, box-shadow 200ms ease, background 200ms ease;
 	overflow-x: hidden;
 	z-index: 900;
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.484);
 
 	&.hidden {
 		transform: translateY(-100%);
 	}
 
 	&.scrolled {
-		box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+		box-shadow: 0 6px 16px rgba(0, 0, 0, 0.484);
+		box-shadow: 0 6px 16px rgba(60, 86, 49, 0.484);
 	}
 }
 
@@ -33,4 +46,56 @@
 
 .brand {
 	width: 140px;
+}
+
+//width: 576px
+@include responsive(sm) {
+	.inner {
+		gap: 40%;
+	}
+	.brand {
+		margin-left: 3%;
+	}
+}
+//width: 768px
+@include responsive(md) {
+	.inner {
+		gap: 20%;
+	}
+}
+//width: 992px
+@include responsive(lg) {
+	.brand {
+		width: 160px;
+	}
+}
+// width: 1200px
+@include responsive(xl) {
+	.inner {
+		gap: 50%;
+	}
+	.brand {
+		margin-left: 1%;
+	}
+}
+// width: 1400px
+@include responsive(xxl) {
+	.inner {
+		gap: 52%;
+	}
+	.brand {
+		margin-left: 0%;
+	}
+}
+// width: 1400px
+@include responsive(maximum) {
+	.topbar {
+		padding-left: 4%;
+	}
+	.inner {
+		max-width: 100%;
+	}
+	.brand {
+		width: 180px;
+	}
 }

@@ -5,6 +5,7 @@ import { TopBar } from "./components/TopBar";
 function App() {
 	return (
 		<>
+			
 			<TopBar />
 			<Header />
 			<main>

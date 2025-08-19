@@ -13,3 +13,35 @@
 	transition: 0.3s;
 	cursor: pointer;
 }
+
+@include responsive(sm) {
+	.btn_valuation {
+		margin-top: 3.8rem;
+		padding: 1.4rem 2.3rem;
+		font-size: 1.6rem;
+		word-spacing: 0.4rem;
+		font-weight: 500;
+		
+		&:hover {
+			background-color: $mobile-accordion-color;
+		}
+	}
+}
+@include responsive(xl) {
+	.btn_valuation {
+		padding: 1.6rem 2.5rem;
+	}
+}
+@include responsive(xxl) {
+	.btn_valuation {
+		margin-top: 4rem;
+		padding: 1.7rem 2.7rem;
+		font-size: 1.7rem;
+	}
+}
+@include responsive(maximum) {
+	.btn_valuation {
+		padding: 1.8rem 2.8rem;
+		font-size: 1.8rem;
+	}
+}

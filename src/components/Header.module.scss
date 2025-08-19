@@ -15,7 +15,7 @@
 	background-size: cover;
 	background-position: center;
 	overflow: hidden;
-	
+
 	&::after {
 		content: "";
 		position: absolute;
@@ -34,7 +34,55 @@
 	font-family: "Montserrat", sans-serif;
 	font-size: 2.3rem;
 	line-height: 1.4;
-	letter-spacing: .3rem;
+	letter-spacing: 0.3rem;
 	text-shadow: 3px 3px 5px #000;
 	color: $text-color;
+}
+
+@include responsive(sm) {
+	.header {
+		height: 480px;
+		padding: 40px;
+	}
+	.title {
+		font-size: 2.5rem;
+		line-height: 1.6;
+	}
+}
+@include responsive(md) {
+	.header {
+		height: 540px;
+		background-position: 50% 0%;
+	}
+}
+@include responsive(lg) {
+	.title {
+		width: 500px;
+		font-size: 2.6rem;
+		word-spacing: .3rem;
+	}
+}
+@include responsive(xl) {
+	.header {
+		height: 580px;
+	}
+}
+@include responsive(xxl) {
+	.header {
+		height: 600px;
+	}
+	.title {
+		width: 500px;
+		font-size: 2.8rem;
+		word-spacing: .4rem;
+	}
+}
+@include responsive(maximum) {
+	.header {
+		height: 620px;
+	}
+	.title {
+		width: 550px;
+		font-size: 3rem;
+	}
 }

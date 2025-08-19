@@ -12,19 +12,20 @@ export const TopBar: React.FC = () => {
 		minMotion: 4,
 	});
 
-	
-	
 	return (
-		<div
-			className={`${styles.topbar} ${hidden ? styles.hidden : ""} ${
-				scrolled ? styles.scrolled : ""
-			}`}
-		>
-			<div className={styles.inner}>
-				<img className={styles.brand} src={logo} alt="logo company" />
+		<>
+			<div className={styles.backgroundBar}></div>
+			<div
+				className={`${styles.topbar} ${hidden ? styles.hidden : ""} ${
+					scrolled ? styles.scrolled : ""
+				}`}
+			>
+				<div className={styles.inner}>
+					<img className={styles.brand} src={logo} alt="logo company" />
 
-				{isDesktop ? <DesktopNav /> : <MobileNav />}
+					{isDesktop ? <DesktopNav /> : <MobileNav />}
+				</div>
 			</div>
-		</div>
+		</>
 	);
 };
