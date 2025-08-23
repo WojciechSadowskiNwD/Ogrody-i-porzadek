@@ -36,6 +36,19 @@ section {
 	color: #000;
 }
 
+// width: 576px
+@include responsive(sm) {
+	section {
+		padding: 25px;
+	}
+}
+// width 768px
+@include responsive(md) {
+	section {
+		padding: 35px;
+	}
+}
+
 
 // width: 1500px
 @include responsive(maximum) {

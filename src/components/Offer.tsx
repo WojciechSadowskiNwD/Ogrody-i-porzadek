@@ -75,17 +75,19 @@ export default function Offer() {
 				<p>Sprawdź nas!</p>
 			</div>
 
-			{productsData.map((product) => (
-				<Product
-					key={product.title}
-					bgColor={product.bgColor}
-					img={product.img}
-					extraImgStyle={product.extraImgStyle}
-					alt={product.alt}
-					title={product.title}
-					services={product.services}
-				/>
-			))}
+			<div className={styles.layoutProducts}>
+				{productsData.map((product) => (
+					<Product
+						key={product.title}
+						bgColor={product.bgColor}
+						img={product.img}
+						extraImgStyle={product.extraImgStyle}
+						alt={product.alt}
+						title={product.title}
+						services={product.services}
+					/>
+				))}
+			</div>
 		</section>
 	);
 }
