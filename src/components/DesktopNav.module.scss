@@ -21,8 +21,8 @@
 	position: relative;
 	padding: 10px 5px;
 	transition: 0.3s;
-	
-	&::after{
+
+	&::after {
 		content: "";
 		position: absolute;
 		left: 0;
@@ -32,7 +32,7 @@
 		background: whitesmoke;
 		transform-origin: left;
 		transform: scaleX(0);
-		transition: transform .4s;
+		transition: transform 0.4s;
 		border-radius: 2px;
 		will-change: transform;
 	}
@@ -40,12 +40,45 @@
 		transform: scaleX(1);
 	}
 }
-
-@include responsive(maximum){
-	.nav{
-		min-width: 480px;
-		.list{				
+// width 1200
+@include responsive(xl) {
+	.nav {
+		padding-right: 6%;
+		min-width: 550px;
+		.list {
 			font-size: 1.7rem;
+			li{
+				display: flex;
+				align-items: center;
+			}
+		}
+	}
+}
+// width 1400
+@include responsive(xxl) {
+	.nav {
+		margin-right: 4%;
+		padding-right: 0;
+		min-width: 600px;
+		.list {
+			font-size: 1.7rem;
+		}
+	}
+}
+
+// width 1500
+@include responsive(maximum) {
+	.nav {
+		// background-color: #ffffff0a;
+		.list {
+			font-size: 1.7rem;
+			li{
+				padding-right: 3rem;
+				
+				&:last-child {
+					padding-right: 0rem;
+				}
+			}
 		}
 	}
 }

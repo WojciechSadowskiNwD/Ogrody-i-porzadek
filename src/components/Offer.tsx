@@ -8,7 +8,7 @@ import styles from "./Offer.module.scss";
 
 const productsData: ProductProps[] = [
 	{
-		bgColor: "firstBgc",
+		bgColor: "yellowBgc",
 		img: projectImg,
 		alt: "zdjęcie siedzącego przy stole projektanta, rysującego projekt ogrodu.",
 		title: "Projektowanie ogrodów",
@@ -21,7 +21,7 @@ const productsData: ProductProps[] = [
 		],
 	},
 	{
-		bgColor: "secondBgc",
+		bgColor: "brownBgc",
 		img: createImg,
 		extraImgStyle: "img2",
 		alt: "Ogrodnik próbuje zasadzić młodą roślinę w ziemii.",
@@ -35,7 +35,7 @@ const productsData: ProductProps[] = [
 		],
 	},
 	{
-		bgColor: "firstBgc",
+		bgColor: "greenBgc",
 		img: cuttingImg,
 		extraImgStyle: "img4",
 		alt: "Ogrodnik przycinający żyopłot, w tle sosna a za nią szerokie schody przypominające te znane z szkół publicznych.",
@@ -49,7 +49,7 @@ const productsData: ProductProps[] = [
 		],
 	},
 	{
-		bgColor: "fourthBgc",
+		bgColor: "blueBgc",
 		img: cleaningImg,
 		extraImgStyle: "img2",
 		alt: "Okno pokryte płynem czyszczącym, myte za pomocą niebieskiej ściągaczki.",

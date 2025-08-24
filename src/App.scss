@@ -36,6 +36,12 @@ section {
 	color: #000;
 }
 
+.fa-circle-check {
+	font-size: 2.7rem;
+	margin-right: 1.5rem;
+	color: $mobile-accordion-color;
+}
+
 // width: 576px
 @include responsive(sm) {
 	section {

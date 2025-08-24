@@ -12,25 +12,48 @@
 	box-shadow: 0px 2px 5px #00000068;
 	transition: 0.3s;
 }
-
-.firstBgc {
-	--start: rgb(216, 231, 216);
-	--end: rgb(156, 190, 156);
+.greenBgc {
+	--start: rgb(217, 232, 130);
+	--end: rgb(161, 174, 88);
 	background: var(--start);
 	background: linear-gradient(135deg, var(--start) 0%, var(--end) 100%);
 }
-.secondBgc {
-	--start: rgb(240, 218, 192);
-	--end: rgb(214, 184, 150);
+.yellowBgc {
+	--start: rgba(241, 239, 137, 0.902);
+	--end: rgb(238, 241, 219);
 	background: var(--start);
 	background: linear-gradient(135deg, var(--start) 0%, var(--end) 100%);
 }
-.fourthBgc {
-	--start: rgb(200, 243, 205);
-	--end: rgb(142, 200, 152);
+.brownBgc {
+	--start: rgb(225, 162, 89);
+	--end: rgb(224, 206, 185);
 	background: var(--start);
 	background: linear-gradient(135deg, var(--start) 0%, var(--end) 100%);
 }
+.blueBgc {
+	--start: rgb(112, 131, 217);
+	--end: rgb(200, 243, 234);
+	background: var(--start);
+	background: linear-gradient(135deg, var(--start) 0%, var(--end) 100%);
+}
+// .firstBgc {
+// 	--start: rgb(216, 231, 216);
+// 	--end: rgb(156, 190, 156);
+// 	background: var(--start);
+// 	background: linear-gradient(135deg, var(--start) 0%, var(--end) 100%);
+// }
+// .secondBgc {
+// 	--start: rgb(224, 206, 185);
+// 	--end: rgb(225, 162, 89);
+// 	background: var(--start);
+// 	background: linear-gradient(135deg, var(--start) 0%, var(--end) 100%);
+// }
+// .fourthBgc {
+// 	--start: rgb(112, 131, 217);
+// 	--end: rgb(200, 243, 234);
+// 	background: var(--start);
+// 	background: linear-gradient(135deg, var(--start) 0%, var(--end) 100%);
+// }
 .imgFrame {
 	margin-top: 5px;
 	width: 95%;
@@ -178,7 +201,7 @@
 }
 // width 1400px
 @include responsive(xxl) {
-	.contentBox{
+	.contentBox {
 		.contentTitle {
 			margin-bottom: 25px;
 			font-size: 2.5rem;

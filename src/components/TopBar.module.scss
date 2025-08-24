@@ -72,7 +72,7 @@
 // width: 1200px
 @include responsive(xl) {
 	.inner {
-		gap: 50%;
+		gap: 45%;
 	}
 	.brand {
 		margin-left: 1%;
@@ -81,7 +81,7 @@
 // width: 1400px
 @include responsive(xxl) {
 	.inner {
-		gap: 52%;
+		gap: 40%;
 	}
 	.brand {
 		margin-left: 0%;

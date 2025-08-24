@@ -1,7 +1,7 @@
 import styles from "./Product.module.scss";
 
 export type ProductProps = {
-	bgColor: "firstBgc" | "secondBgc" | "fourthBgc";
+	bgColor: "yellowBgc" | "brownBgc" | "greenBgc" | "blueBgc";
 	img: string;
 	extraImgStyle?: "img2" | "img4";
 	alt: string;
