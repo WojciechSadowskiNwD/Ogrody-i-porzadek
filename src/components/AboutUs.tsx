@@ -1,16 +1,17 @@
 import styles from "./AboutUs.module.scss";
 import Content from "./Content";
+import OpenSection from "./OpenSection";
 
 export type ContentDataType = {
 	title: string;
 	textBlock: TextBlockType[];
-}
+};
 type TextBlockType = {
-	topic: string;	
+	topic: string;
 	text: string;
-}
+};
 
-const contentData:ContentDataType[] = [
+const contentData: ContentDataType[] = [
 	{
 		title: "Co nas wyróżnia",
 		textBlock: [
@@ -58,19 +59,14 @@ const contentData:ContentDataType[] = [
 export default function AboutUs() {
 	return (
 		<section className={styles.layout}>
-			<div className={styles.titleContainer}>
-				<h2 className={styles.sectionTitle}>O nas</h2>
-			</div>
-			<h2 className={styles.companyName}>Ogrody i Porządek Paweł Szymeczko</h2>
-			<em className={styles.introText}>
-				- to lokalna, Toruńska firma wyspecjalizowana w tworzeniu oraz
-				pielęgnacji zielonych przestrzeni —{" "}
-				<span className={styles.spanA}>ogrodów estetycznych</span>,
-				funkcjonalnych i dopasowanych do Państwa stylu życia. Nasza praca jest
-				pasją, dla tego dokładamy wszelkich starań aby sprostać wymaganiom nawet
-				najbardziej wymagających klientów.
-			</em>
-
+			<OpenSection
+				title="O nas"
+				beforeSpan="- to lokalna, Toruńska firma wyspecjalizowana w tworzeniu oraz pielęgnacji zielonych przestrzeni —"
+				spanTxt="ogrodów estetycznych"
+				afterSpan="funkcjonalnych i dopasowanych do Państwa stylu życia. Nasza praca jest pasją, dla tego dokładamy wszelkich starań aby sprostać wymaganiom nawet najbardziej wymagających klientów."
+			>
+				Ogrody i Porządek Paweł Szymeczko
+			</OpenSection>
 			<Content data={contentData[0]} />
 			<Content data={contentData[1]} />
 		</section>

@@ -5,6 +5,7 @@ import cleaningImg from "../assets/photos/window-cleaning.png";
 import type { ProductProps } from "./Product";
 import Product from "./Product";
 import styles from "./Offer.module.scss";
+import OpenSection from "./OpenSection";
 
 const productsData: ProductProps[] = [
 	{
@@ -67,13 +68,12 @@ const productsData: ProductProps[] = [
 export default function Offer() {
 	return (
 		<section>
-			<h2 className={styles.sectionTitle}>Oferta</h2>
-			<div className={styles.introText}>
-				W pełni kompleksowa obsługa — zaprojektujemy wymarzony ogród,{" "}
-				<span className={styles.spanA}>zadbamy o Państwa zieleń</span>,
-				wykonujemy również usługi sprzątające dla osiedli mieszkaniowych.
-				<p>Sprawdź nas!</p>
-			</div>
+			<OpenSection
+				title="Oferta"
+				beforeSpan="Tworzymy ogrody, które zachwycają o każdej porze roku. Od kompleksowych aranżacji po bieżącą "
+				spanTxt="pielęgnację terenów zielonych"
+				afterSpan="– dbamy o każdy detal. Oferujemy także usługi porządkowe dla osiedli mieszkaniowych. Sprawdź nas!"
+			/>
 
 			<div className={styles.layoutProducts}>
 				{productsData.map((product) => (
