@@ -2,10 +2,9 @@ import projectImg from "../assets/photos/projektowanie-ogrodów-small.jpg";
 import createImg from "../assets/photos/zakladanie-ogrodu.jpg";
 import cuttingImg from "../assets/photos/garden-cutting.png";
 import cleaningImg from "../assets/photos/window-cleaning.png";
-import type { ProductProps } from "./Product";
-import Product from "./Product";
-import styles from "./Offer.module.scss";
+import Product, {type ProductProps } from "./Product";
 import OpenSection from "./OpenSection";
+import styles from "./Offer.module.scss";
 
 const productsData: ProductProps[] = [
 	{

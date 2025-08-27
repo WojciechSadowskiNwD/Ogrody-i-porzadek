@@ -61,7 +61,7 @@ export default function AboutUs() {
 		<section className={styles.layout}>
 			<OpenSection
 				title="O nas"
-				beforeSpan="- to lokalna, Toruńska firma wyspecjalizowana w tworzeniu oraz pielęgnacji zielonych przestrzeni —"
+				beforeSpan="- to lokalna, Toruńska firma wyspecjalizowana w tworzeniu oraz pielęgnacji zielonych przestrzeni — "
 				spanTxt="ogrodów estetycznych"
 				afterSpan="funkcjonalnych i dopasowanych do Państwa stylu życia. Nasza praca jest pasją, dla tego dokładamy wszelkich starań aby sprostać wymaganiom nawet najbardziej wymagających klientów."
 			>

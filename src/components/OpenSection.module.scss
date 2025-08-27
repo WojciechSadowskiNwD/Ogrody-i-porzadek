@@ -1,13 +1,15 @@
+@import "../styles/global.scss";
+
 .titleContainer {
 	display: flex;
 	justify-content: center;
 	width: 100%;
-    padding-top: 6rem;
+	padding-top: 6rem;
 	margin-bottom: 60px;
 
 	.sectionTitle {
-		padding: 10px;
 		margin: 15px;
+		padding: 10px;
 		width: 160px;
 		text-align: center;
 		font-size: 2.6rem;
@@ -25,22 +27,95 @@
 	font-size: 1.5rem;
 	letter-spacing: 0.1rem;
 	font-weight: 500;
+	line-height: 0.93;
 	text-transform: uppercase;
 	background-color: #fff;
 	color: rgb(23, 76, 30);
 	text-shadow: 0px 0px 1px rgba(23, 76, 30, 0.274);
 }
 .introText {
-	font-size: 2rem;
 	text-align: justify;
 	display: block;
 	margin-left: 4%;
 	margin-right: 4%;
 	padding-bottom: 40px;
-
+	font-size: 2rem;
+	line-height: 1.4;
 
 	.spanA {
 		color: rgb(23, 76, 30);
 		text-shadow: 0px 0px 1px rgb(23, 76, 30);
+	}
+}
+
+// width 412
+@media (min-width: 412px) {
+	.companyName {
+		line-height: 1;
+	}
+	.introText {
+		margin-left: 4.7%;
+		margin-right: 4.7%;
+		line-height: 1.5;
+	}
+}
+@include responsive(md) {
+	.companyName {
+		margin-left: 2.5rem;
+	}
+}
+@include responsive(lg) {
+	.companyName {
+		margin-left: 5rem;
+	}
+	.introText {
+		margin-left: 6%;
+		margin-right: 6%;
+		padding-bottom: 10rem;
+	}
+}
+@include responsive(xl) {
+	.companyName {
+		margin-left: 6.5rem;
+		font-size: 1.6rem;
+	}
+	.introText {
+		padding-bottom: 12rem;
+		font-size: 2.3rem;
+	}
+}
+@include responsive(xxl) {
+	.titleContainer {
+		.sectionTitle {
+			font-size: 2.8rem;
+		}
+	}
+	.companyName {
+		margin-left: 14%;
+		font-size: 1.7rem;
+	}
+
+	.introText {
+		margin-left: auto;
+		margin-right: auto;
+		min-width: 1050px;
+		max-width: 1050px;
+	}
+}
+@include responsive(maximum) {
+	.titleContainer {
+		.sectionTitle {
+			font-size: 2.9rem;
+		}
+	}
+	.companyName {
+		margin-left: 15%;
+		font-size: 1.8rem;
+	}
+
+	.introText {
+		max-width: 1070px;
+		max-width: 1070px;
+		font-size: 2.4rem;
 	}
 }
