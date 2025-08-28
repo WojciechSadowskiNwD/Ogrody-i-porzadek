@@ -48,7 +48,7 @@
 	}
 }
 
-// width 412
+//** width 412
 @media (min-width: 412px) {
 	.companyName {
 		line-height: 1;
@@ -59,31 +59,50 @@
 		line-height: 1.5;
 	}
 }
-@include responsive(md) {
+
+// width 576px
+@include responsive(sm) {
 	.companyName {
-		margin-left: 2.5rem;
+		margin-left: 1.2rem;
 	}
 }
-@include responsive(lg) {
+
+// width 768px
+@include responsive(md) {
 	.companyName {
-		margin-left: 5rem;
+		margin-left: 4.4rem;
 	}
 	.introText {
-		margin-left: 6%;
-		margin-right: 6%;
+		margin-left: auto;
+		margin-right: auto;
+		min-width: 700px;
+		max-width: 700px;
 		padding-bottom: 10rem;
 	}
 }
+
+// width 992px
+@include responsive(lg) {
+	.companyName {
+		margin-left: 15.5%;
+	}
+}
+
+// width 1200px
 @include responsive(xl) {
 	.companyName {
-		margin-left: 6.5rem;
+		margin-left: 14%;
 		font-size: 1.6rem;
 	}
 	.introText {
+		min-width: 900px;
+		max-width: 900px;
 		padding-bottom: 12rem;
 		font-size: 2.3rem;
 	}
 }
+
+// width 1400px
 @include responsive(xxl) {
 	.titleContainer {
 		.sectionTitle {
@@ -96,14 +115,15 @@
 	}
 
 	.introText {
-		margin-left: auto;
-		margin-right: auto;
+		font-size: 2.6rem !important;
 		min-width: 1050px;
 		max-width: 1050px;
 	}
 }
+// width 1500px
 @include responsive(maximum) {
 	.titleContainer {
+		padding-bottom: 2rem;
 		.sectionTitle {
 			font-size: 2.9rem;
 		}

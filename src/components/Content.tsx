@@ -5,21 +5,21 @@ import styles from "./Content.module.scss";
 const VIEWPORT_TITLE = {
   once: true,
   amount: "all" as const,       
-  margin: "-12% 0px -12% 0px",
+  margin: "-15% 0px -15% 0px",
 };
 
 const VIEWPORT_ITEM = {
   once: true,
   amount: 0.75,                 
-  margin: "0px 0px 12% 0px",
+  margin: "0px 0px 15% 0px",
 } as const;
 
 const itemContainer: Variants = {
   hidden: {},
   visible: {
     transition: {
-      delayChildren: 0.35,
-			staggerChildren: 0.38,
+      delayChildren: 0.55,   
+			staggerChildren: 0.55,
     },
   },
 };
@@ -29,13 +29,13 @@ const titleIn: Variants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 1.5, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 1.6, ease: [0.22, 1, 0.36, 1] },
   },
 };
 
 const textIn: Variants = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 1.5, ease: "easeOut" } },
+  visible: { opacity: 1, transition: { duration: 1.6, ease: "easeOut" } },
 };
 
 type ContentProps = { data: ContentDataType };

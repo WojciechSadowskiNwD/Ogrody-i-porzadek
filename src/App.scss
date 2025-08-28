@@ -53,9 +53,17 @@ section {
 	section {
 		padding: 35px;
 	}
+	.fa-circle-check {
+		font-size: 2.8rem;
+	}
 }
 
-
+// width: 1200px
+@include responsive(xl) {
+	.fa-circle-check {
+		font-size: 2.9rem;
+	}
+}
 // width: 1500px
 @include responsive(maximum) {
 	#root {

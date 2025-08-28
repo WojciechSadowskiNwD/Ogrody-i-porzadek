@@ -14,24 +14,28 @@
 }
 .greenBgc {
 	--start: rgb(217, 232, 130);
-	--end: rgb(161, 174, 88);
+	// --end: rgb(161, 174, 88);
+	--end: rgb(136, 148, 68);
 	background: var(--start);
 	background: linear-gradient(135deg, var(--start) 0%, var(--end) 100%);
 }
 .yellowBgc {
-	--start: rgba(241, 239, 137, 0.902);
+	// --start: rgba(241, 239, 137, 0.902);
+	--start: rgb(161, 174, 88);
 	--end: rgb(238, 241, 219);
 	background: var(--start);
 	background: linear-gradient(135deg, var(--start) 0%, var(--end) 100%);
 }
 .brownBgc {
 	--start: rgb(225, 162, 89);
-	--end: rgb(224, 206, 185);
+	// --end: rgb(224, 206, 185);
+	--end: rgb(161, 174, 88);
 	background: var(--start);
 	background: linear-gradient(135deg, var(--start) 0%, var(--end) 100%);
 }
 .blueBgc {
-	--start: rgb(112, 131, 217);
+	// --start: rgb(112, 131, 217);
+	--start: rgb(161, 174, 88);
 	--end: rgb(200, 243, 234);
 	background: var(--start);
 	background: linear-gradient(135deg, var(--start) 0%, var(--end) 100%);
