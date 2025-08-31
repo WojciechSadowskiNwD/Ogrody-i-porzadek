@@ -1,8 +1,9 @@
-import "./App.scss";
-import AboutUs from "./components/AboutUs";
+import { TopBar } from "./components/TopBar";
 import Header from "./components/Header";
 import Offer from "./components/Offer";
-import { TopBar } from "./components/TopBar";
+import AboutUs from "./components/AboutUs";
+import Projects from "./components/Projects";
+import "./App.scss";
 
 function App() {
 	return (
@@ -12,6 +13,7 @@ function App() {
 			<main>
 				<Offer />
 				<AboutUs />
+				<Projects />
 			</main>
 		</>
 	);

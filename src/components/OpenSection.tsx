@@ -5,7 +5,7 @@ type OpenSectionProps = {
 	title: string;
 	beforeSpan: string;
 	spanTxt: string;
-	afterSpan: string;
+	afterSpan?: string;
 	children?: ReactNode;
 };
 
