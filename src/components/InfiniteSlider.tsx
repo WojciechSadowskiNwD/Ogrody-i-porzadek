@@ -11,10 +11,11 @@ import styles from "./InfiniteSlider.module.scss";
 
 type InfiniteSliderProps = {
 	items: Slide[];
+	durationMs: number;
 };
 type Slide = ReactNode;
 
-function InfiniteSlider({ items }: InfiniteSliderProps) {
+function InfiniteSlider({ items, durationMs }: InfiniteSliderProps) {
 	const [index, setIndex] = useState(0);
 	const [animate, setAnimate] = useState(true);
 	const extended = useMemo(() => [...items, ...items], [items]);
@@ -25,7 +26,7 @@ function InfiniteSlider({ items }: InfiniteSliderProps) {
 
 	const startAuto = () => {
 		if(timerRef.current) clearInterval(timerRef.current);
-		timerRef.current = setInterval(()=> setIndex( i=> i+1 ), 4000);
+		timerRef.current = setInterval(()=> setIndex( i=> i+1 ), durationMs);
 	}
 	const stopAuto = () => {
 		if(timerRef.current) clearInterval(timerRef.current);

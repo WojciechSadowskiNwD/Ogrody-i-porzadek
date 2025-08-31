@@ -1,122 +1,65 @@
-// .slider {
-//   position: relative;
-//   width: 100%;
-//   max-width: 640px; // demo
-//   margin: 0 auto;
-//   user-select: none;
-// }
-
-// .viewport {
-//   overflow: hidden;
-//   width: 100%;
-//   border-radius: 16px;
-// }
-
-// .track {
-//   display: flex;
-//   will-change: transform;
-// }
-
-// .slide {
-//   flex: 0 0 100%; // zawsze 1 element na widoku
-//   min-width: 100%;
-//   display: grid;
-//   place-items: center;
-//   height: 260px;   // demo – ustaw wg potrzeb
-// }
-
-// /* przycisk „next” */
-// .btn {
-//   position: absolute;
-//   top: 50%;
-//   transform: translateY(-50%);
-//   right: 8px;
-//   background: rgba(255, 255, 255, 0.85);
-//   border: none;
-//   border-radius: 999px;
-//   width: 40px;
-//   height: 40px;
-//   font-size: 22px;
-//   line-height: 1;
-//   cursor: pointer;
-//   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
-
-//   &:hover {
-//     background: #fff;
-//   }
-// }
-
-// .btnNext {}
-
-// /* --- DEMO (opcjonalne) --- */
-// .demoCard {
-//   width: 100%;
-//   height: 100%;
-//   color: #fff;
-//   font-size: 32px;
-//   font-weight: 700;
-//   letter-spacing: .5px;
-//   display: grid;
-//   place-items: center;
-//   border-radius: 16px;
-// }
+@import "../styles/global.scss";
 
 .sliderContainer {
 	position: relative;
 	margin: 0 auto;
 	width: 100%;
 	max-width: 640px;
-	height: 400px;
-	background-color: rgba(255, 0, 0, 0.128);
+	height: 680px;
+	// height: 700px;
+	// background-color: rgba(255, 0, 0, 0.128);
 }
 
 .viewport {
+  position: absolute;
+	top: 50px;
+	left: 0;
+	right: 0;
 	overflow: hidden;
 }
 .track {
   display: flex;
-  will-change: transform;
+	will-change: transform;
 }
 .slide {
-  flex-grow: 0;  //dont grow
-  flex-shrink: 0;  //dont go smaller
-  flex-basis: 100%;
-  min-width: 100%;
-  height: 260px;
-  display: grid;
-  place-items: center;
+	flex-grow: 0; //dont grow
+	flex-shrink: 0; //dont go smaller
+	flex-basis: 100%;
+	min-width: 100%;
+	display: grid;
+	place-items: center;
 }
 .btn {
-  border: none;
-  background: none;
+  position: absolute;
+  top: 3%;
+  right: 50%;
+  width: 60px;
+  border-radius: 50%;
+  background-color: $primary-colorBgc;
+  border: 3px solid $mobile-accordion-color;
+  box-shadow: inset 0px 0px 15px $mobile-accordion-color;
 }
 
 .btnNext {
-  position: absolute;
-  top: 50%;
-  right: 8px;
-  transform: translateY(-50%);
+	transform: translate(110%, -50%);
 }
 .btnPrev {
-  position: absolute;
-  top: 50%;
-  left: 8px;
-  transform: translateY(-50%);
+	transform: translate(-10%, -50%);
 }
 
 .demo1 {
 	background: #7c3aed;
-  color: #fff;
+	color: #fff;
 }
 .demo2 {
-  background: #2563eb;
-  color: #fff;
+	background: #2563eb;
+	color: #fff;
 }
 .demo3 {
-  background: #059669;
-  color: #fff;
+	background: #059669;
+	color: #fff;
 }
 .demo4 {
-  background: #ea580c;
-  color: #fff;
+	background: #ea580c;
+	color: #fff;
 }
