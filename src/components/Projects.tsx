@@ -1,6 +1,5 @@
 import InfiniteSlider from "./InfiniteSlider";
 import OpenSection from "./OpenSection";
-import styles from "./InfiniteSlider.module.scss";
 import SlideCard from "./SlideCard";
 import img1 from "../assets/photos/Implementations/zlecenie_1.jpg";
 import img2 from "../assets/photos/Implementations/zlecenie_2.jpg";
@@ -59,7 +58,7 @@ export default function Projects() {
 					<SlideCard {...dataSlides[3]} />,
 					<SlideCard {...dataSlides[4]} />,
 				]}
-        durationMs={5000}
+        durationMs={4500}
 			/>
 		</section>
 	);
