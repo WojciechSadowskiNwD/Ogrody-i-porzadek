@@ -62,6 +62,9 @@
 
 // width 576px
 @include responsive(sm) {
+	.titleContainer{
+		padding-top: 4rem;
+	}
 	.companyName {
 		margin-left: 1.2rem;
 	}
@@ -84,7 +87,7 @@
 // width 992px
 @include responsive(lg) {
 	.companyName {
-		margin-left: 15.5%;
+		margin-left: 12%;
 	}
 }
 

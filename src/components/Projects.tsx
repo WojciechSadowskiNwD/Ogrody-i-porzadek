@@ -58,7 +58,7 @@ export default function Projects() {
 					<SlideCard {...dataSlides[3]} />,
 					<SlideCard {...dataSlides[4]} />,
 				]}
-        durationMs={4500}
+        durationMs={5500}
 			/>
 		</section>
 	);

@@ -6,19 +6,18 @@
 	width: 100%;
 	max-width: 640px;
 	height: 680px;
-	// height: 700px;
 	// background-color: rgba(255, 0, 0, 0.128);
 }
 
 .viewport {
-  position: absolute;
+	position: absolute;
 	top: 50px;
 	left: 0;
 	right: 0;
 	overflow: hidden;
 }
 .track {
-  display: flex;
+	display: flex;
 	will-change: transform;
 }
 .slide {
@@ -30,36 +29,83 @@
 	place-items: center;
 }
 .btn {
-  position: absolute;
-  top: 3%;
-  right: 50%;
-  width: 60px;
-  border-radius: 50%;
-  background-color: $primary-colorBgc;
-  border: 3px solid $mobile-accordion-color;
-  box-shadow: inset 0px 0px 15px $mobile-accordion-color;
+	position: absolute;
+	top: -8px;
+	right: 50%;
+	width: 60px;
+	border-radius: 50%;
+	background-color: $primary-colorBgc;
+	border: 3px solid $mobile-accordion-color;
+	box-shadow: inset 0px 0px 15px $mobile-accordion-color;
+	cursor: pointer;
 }
 
 .btnNext {
-	transform: translate(110%, -50%);
+	right: 30%;
+	// right: 12px;
+	// transform: translate(110%, -50%);
 }
 .btnPrev {
-	transform: translate(-10%, -50%);
+	left: 32%;
+	// left: 12px;
+	// transform: translate(-10%, -50%);
 }
 
-.demo1 {
-	background: #7c3aed;
-	color: #fff;
+// width 576px
+@include responsive(sm) {
+	.sliderContainer {
+		.slide {
+			min-height: 620px;
+		}
+	}
+	.btnNext {
+		right: 34%;
+	}
+	.btnPrev {
+		left: 34%;
+	}
 }
-.demo2 {
-	background: #2563eb;
-	color: #fff;
+
+// width 768px
+@include responsive(md) {
+	.sliderContainer {
+		max-width: 92vw;
+		min-height: 500px;
+		max-height: 500px;
+
+		.slide {
+			min-height: 460px;
+			max-height: 460px;
+		}
+		.viewport {
+			top: 10px;
+		}
+	}
+	.btn {
+		top: 90%;
+	}
+	.btnNext {
+		right: calc(50% - 70px);
+	}
+	.btnPrev {
+		left: calc(50% - 70px);
+	}
 }
-.demo3 {
-	background: #059669;
-	color: #fff;
+
+// width 1200px
+@include responsive(xl) {
+	.sliderContainer {
+		min-width: 1100px;
+		max-width: 1100px;
+	}
+	.btn {
+		top: 88%;
+	}
 }
-.demo4 {
-	background: #ea580c;
-	color: #fff;
+// width 1400px
+@include responsive(xxl) {
+	.sliderContainer {
+		min-width: 1200px;
+		max-width: 1200px;
+	}
 }

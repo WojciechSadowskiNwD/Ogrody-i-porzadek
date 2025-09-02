@@ -8,6 +8,7 @@ import {
 	type ReactNode,
 	type TransitionEventHandler,
 } from "react";
+import { motion } from "framer-motion";
 import styles from "./InfiniteSlider.module.scss";
 
 type InfiniteSliderProps = {
@@ -16,6 +17,17 @@ type InfiniteSliderProps = {
 };
 type Slide = ReactNode;
 
+// framer-motion: variants for buttons
+const btnVariants = {
+	initial: {
+		scale: 1,
+		y: 0,
+		boxShadow: "inset 0px 0px 15px rgba(255,255,255,0.15)",
+	},
+	hover: { scale: 1.05, y: -2, boxShadow: "0 8px 24px rgba(0,0,0,0.25) " },
+	tap: { scale: 0.9, y: 0 },
+};
+
 function InfiniteSlider({ items, durationMs }: InfiniteSliderProps) {
 	const [index, setIndex] = useState(0);
 	const [animate, setAnimate] = useState(true);
@@ -23,18 +35,24 @@ function InfiniteSlider({ items, durationMs }: InfiniteSliderProps) {
 
 	const indexRef = useRef(index);
 	indexRef.current = index;
+
 	const timerRef = useRef<number | null>(null);
 	const observeRef = useRef<HTMLDivElement | null>(null);
 
-	const startAuto = useCallback (() => {
-		if (timerRef.current) clearInterval(timerRef.current);
-		timerRef.current = setInterval(() => setIndex((i) => i + 1), durationMs);
+	const startAuto = useCallback(() => {
+		if (timerRef.current != null) return;
+		timerRef.current = window.setInterval(
+			() => setIndex((i) => i + 1),
+			durationMs
+		);
 	}, [durationMs]);
-	
-	const stopAuto = useCallback (() => {
-		if (timerRef.current) clearInterval(timerRef.current);
-		timerRef.current = null;
-	},[]);
+
+	const stopAuto = useCallback(() => {
+		if (timerRef.current != null) {
+			window.clearInterval(timerRef.current);
+			timerRef.current = null;
+		}
+	}, []);
 
 	const handleMouseEnter = () => stopAuto();
 	const handleMouseLeave = () => startAuto();
@@ -45,10 +63,11 @@ function InfiniteSlider({ items, durationMs }: InfiniteSliderProps) {
 		setIndex((i) => i + 1);
 		startAuto();
 	};
+
 	const handlePrev = () => {
 		stopAuto();
 		setAnimate(true);
-		setIndex((i) => (i > 0 ? i - 1 : items.length - 1));
+		setIndex((i) => i - 1);
 		startAuto();
 	};
 
@@ -57,31 +76,41 @@ function InfiniteSlider({ items, durationMs }: InfiniteSliderProps) {
 		if (!el) return;
 
 		const observer = new IntersectionObserver(
-			(entries) => {
-				if (entries[0].isIntersecting) startAuto();
+			([entry]) => {
+				const halfVisible =
+					entry.isIntersecting && entry.intersectionRatio >= 0.6;
+				if (halfVisible) startAuto();
 				else stopAuto();
 			},
-			{
-				threshold: 0.7,
-			}
+			{ threshold: [0, 0.7, 1] }
 		);
-		observer.observe(el);
 
+		observer.observe(el);
 		return () => {
 			stopAuto();
-			observer.unobserve(el);
 			observer.disconnect();
 		};
+	}, [startAuto, stopAuto]);
+
+	// Pause when card is not active
+	useEffect(() => {
+		const onVisible = () => (document.hidden ? stopAuto() : startAuto());
+		document.addEventListener("visibilitychange", onVisible);
+		return () => document.removeEventListener("visibilitychange", onVisible);
 	}, [startAuto, stopAuto]);
 
 	const handleTransitionEnd: TransitionEventHandler<HTMLDivElement> = (e) => {
 		if (e.propertyName !== "transform") return;
 
-		// if index == items.length set 0!
-		if (indexRef.current === items.length) {
+		const i = indexRef.current;
+
+		//guard -- when index jump to more
+		if (i >= items.length || i < 0) {
 			setAnimate(false);
+			const next = ((i % items.length) + items.length) % items.length;
+
 			requestAnimationFrame(() => {
-				setIndex(0);
+				setIndex(next);
 				requestAnimationFrame(() => setAnimate(true));
 			});
 		}
@@ -89,7 +118,7 @@ function InfiniteSlider({ items, durationMs }: InfiniteSliderProps) {
 
 	const trackStyle: CSSProperties = {
 		transform: `translateX(-${index * 100}%)`,
-		transition: animate ? `transform 600ms ease` : "none",
+		transition: animate ? `transform 800ms ease` : "none",
 	};
 
 	return (
@@ -113,18 +142,28 @@ function InfiniteSlider({ items, durationMs }: InfiniteSliderProps) {
 				</div>
 			</div>
 
-			<button
+			<motion.button
 				className={`${styles.btn} ${styles.btnNext}`}
 				onClick={handleNext}
+				variants={btnVariants}
+				initial="initial"
+				whileHover="hover"
+				whileTap="tap"
+				transition={{ type: "spring", stiffness: 320, damping: 18, mass: 0.4 }}
 			>
-				<i className="fa-solid fa-caret-right"></i>
-			</button>
-			<button
+				<i className="fa-solid fa-caret-right" />
+			</motion.button>
+			<motion.button
 				className={`${styles.btn} ${styles.btnPrev}`}
 				onClick={handlePrev}
+				variants={btnVariants}
+				initial="initial"
+				whileHover="hover"
+				whileTap="tap"
+				transition={{ type: "spring", stiffness: 320, damping: 18, mass: 0.4 }}
 			>
-				<i className="fa-solid fa-caret-left"></i>
-			</button>
+				<i className="fa-solid fa-caret-left" />
+			</motion.button>
 		</div>
 	);
 }

@@ -20,11 +20,13 @@ export default function SlideCard({
 					alt="Fotografie przedstawiają poszczególne realizacje prac w ogrodach klientów."
 				/>
 			</div>
-			<div className={styles.serviceName}>
-				<h2>{serviceTitle}</h2>
-			</div>
-			<div className={styles.serviceContent}>
-				<p>{textContent}</p>
+			<div className={styles.text}>
+				<div className={styles.serviceName}>
+					<h2>{serviceTitle}</h2>
+				</div>
+				<div className={styles.serviceContent}>
+					<p>{textContent}</p>
+				</div>
 			</div>
 		</div>
 	);
