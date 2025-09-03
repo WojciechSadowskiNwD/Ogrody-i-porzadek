@@ -4,7 +4,7 @@ import styles from "./OpenSection.module.scss";
 type OpenSectionProps = {
 	title: string;
 	beforeSpan: string;
-	spanTxt: string;
+	spanTxt?: string;
 	afterSpan?: string;
 	children?: ReactNode;
 };
@@ -27,7 +27,7 @@ export default function OpenSection({
 
 			<em className={styles.introText}>
 				{beforeSpan}
-				<span className={styles.spanA}>{spanTxt}</span>, {afterSpan}
+				<span className={styles.spanA}>{spanTxt}</span> {afterSpan}
 			</em>
 		</div>
 	);

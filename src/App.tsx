@@ -4,6 +4,7 @@ import Offer from "./components/Offer";
 import AboutUs from "./components/AboutUs";
 import Projects from "./components/Projects";
 import "./App.scss";
+import Reviews from "./components/Reviews";
 
 function App() {
 	return (
@@ -14,6 +15,7 @@ function App() {
 				<Offer />
 				<AboutUs />
 				<Projects />
+				<Reviews />
 			</main>
 		</>
 	);

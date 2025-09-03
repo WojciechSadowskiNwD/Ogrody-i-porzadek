@@ -1,0 +1,38 @@
+.reviewCard {
+	width: 92vw;
+	padding: 2.3rem 2.2rem;
+	border-radius: 15px;
+	font-size: 1.8rem;
+	letter-spacing: 0.15rem;
+	word-spacing: 0.2rem;
+	color: #e7e7e7;
+    --start: rgb(23, 76, 30);
+	--end: rgb(11, 56, 17);
+	background: var(--start);
+	background: linear-gradient(135deg, var(--start) 0%, var(--end) 100%);
+}
+.quoteBar{
+	display: flex;
+	justify-content: flex-start;
+	width: 100%;
+}
+
+.quote {
+	margin-bottom: 1.2rem;
+	margin-left: 0;
+	padding-left: 0;
+	font-size: 3.5rem;
+	padding: 1rem;
+	width: 60px;
+	height: 65px;
+	text-align: center;
+	border-radius: 12px;
+	color: #192b01;
+	background-color: rgb(161, 174, 88);
+}
+.text {
+	padding-top: 1rem;
+}
+.customerName {
+	padding-top: 3rem;
+}
