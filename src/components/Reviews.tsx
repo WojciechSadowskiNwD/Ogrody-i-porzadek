@@ -6,7 +6,7 @@ export default function Reviews() {
 		<section>
 			<OpenSection
 				title="Opinie"
-				beforeSpan="Przekonaj się co mówią o nas klienci."
+				beforeSpan="Przekonaj się co mówią o nas obsłużeni klienci."
 			/>
             <ReviewBox />
 		</section>

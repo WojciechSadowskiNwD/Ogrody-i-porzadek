@@ -6,12 +6,21 @@
 	letter-spacing: 0.15rem;
 	word-spacing: 0.2rem;
 	color: #e7e7e7;
-    --start: rgb(23, 76, 30);
+	--start: rgb(23, 76, 30);
 	--end: rgb(11, 56, 17);
 	background: var(--start);
 	background: linear-gradient(135deg, var(--start) 0%, var(--end) 100%);
+	opacity: 0;
+	transform: translateY(40px);
+	transition: all 0.8s ease;
+	will-change: opacity, transform;
 }
-.quoteBar{
+.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.quoteBar {
 	display: flex;
 	justify-content: flex-start;
 	width: 100%;
