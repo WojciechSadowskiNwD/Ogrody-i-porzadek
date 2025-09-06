@@ -5,7 +5,7 @@ export function useInView<T extends HTMLElement>() {
 	const [isVisible, setIsVisible] = useState(false);
 
 	useEffect(() => {
-		if (!ref.current) return;
+		if (!ref.current) return; 
 
 		const observer = new IntersectionObserver(
 			([entry]) => {

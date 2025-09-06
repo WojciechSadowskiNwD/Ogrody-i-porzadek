@@ -2,13 +2,13 @@
 
 .btn_valuation {
 	margin-top: 3.5rem;
-	padding: 1.3rem 2.2rem;
+	padding: 1.4rem 2.4rem;
 	font-size: 1.5rem;
 	font-weight: 700;
 	letter-spacing: 0.2rem;
 	text-transform: uppercase;
 	border: none;
-	color: #fff;
+	color: whitesmoke;
 	background-color: $primary-color;
 	transition: 0.3s;
 	cursor: pointer;
@@ -21,7 +21,7 @@
 		font-size: 1.6rem;
 		word-spacing: 0.4rem;
 		font-weight: 500;
-		
+
 		&:hover {
 			background-color: $mobile-accordion-color;
 		}

@@ -1,5 +1,5 @@
-import { ReviewCard } from "./reviewCard";
-import styles from "./ReviewMobile.module.scss";
+import { ReviewCard } from "./ReviewCard";
+import styles from "./Reviews.module.scss";
 
 export const ReviewMobile: React.FC = () => {
 	return (

@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import styles from "./OpenSection.module.scss";
 
 type OpenSectionProps = {
@@ -18,6 +18,11 @@ export default function OpenSection({
 }: OpenSectionProps) {
 	console.log(children);
 
+	const smallTxt: CSSProperties =
+		beforeSpan.length <= 60
+			? { textAlign: "center" }
+			: {};
+
 	return (
 		<div>
 			<div className={styles.titleContainer}>
@@ -25,7 +30,7 @@ export default function OpenSection({
 			</div>
 			{children ? <h2 className={styles.companyName}>{children}</h2> : ""}
 
-			<em className={styles.introText}>
+			<em className={styles.introText} style={smallTxt}>
 				{beforeSpan}
 				<span className={styles.spanA}>{spanTxt}</span> {afterSpan}
 			</em>

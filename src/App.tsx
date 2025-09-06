@@ -3,8 +3,9 @@ import Header from "./components/Header";
 import Offer from "./components/Offer";
 import AboutUs from "./components/AboutUs";
 import Projects from "./components/Projects";
-import "./App.scss";
 import Reviews from "./components/Reviews";
+import SectionButton from "./components/SectionButton";
+import "./App.scss";
 
 function App() {
 	return (
@@ -14,6 +15,7 @@ function App() {
 			<main>
 				<Offer />
 				<AboutUs />
+				<SectionButton />
 				<Projects />
 				<Reviews />
 			</main>

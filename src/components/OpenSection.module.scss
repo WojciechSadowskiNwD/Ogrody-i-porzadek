@@ -73,7 +73,7 @@
 // width 768px
 @include responsive(md) {
 	.companyName {
-		margin-left: 4.4rem;
+		margin-left: 0rem;
 	}
 	.introText {
 		margin-left: auto;
@@ -94,7 +94,7 @@
 // width 1200px
 @include responsive(xl) {
 	.companyName {
-		margin-left: 14%;
+		margin-left: 10%;
 		font-size: 1.6rem;
 	}
 	.introText {
@@ -114,7 +114,7 @@
 		}
 	}
 	.companyName {
-		margin-left: 14%;
+		margin-left: 11%;
 		font-size: 1.7rem;
 	}
 
@@ -133,7 +133,7 @@
 		}
 	}
 	.companyName {
-		margin-left: 15%;
+		margin-left: 14%;
 		font-size: 1.8rem;
 	}
 

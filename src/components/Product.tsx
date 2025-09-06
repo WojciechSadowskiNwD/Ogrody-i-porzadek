@@ -13,7 +13,7 @@ export default function Product({
 	bgColor,
 	img,
 	alt,
-	title,
+	title, 
 	services,
 	extraImgStyle,
 }: ProductProps) {
