@@ -6,6 +6,7 @@ import Projects from "./components/Projects";
 import Reviews from "./components/Reviews";
 import SectionButton from "./components/SectionButton";
 import "./App.scss";
+import Footer from "./components/Footer";
 
 function App() {
 	return (
@@ -19,6 +20,7 @@ function App() {
 				<Projects />
 				<Reviews />
 			</main>
+			<Footer />
 		</>
 	);
 }

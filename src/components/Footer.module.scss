@@ -1,0 +1,148 @@
+@import "../styles/global.scss";
+
+.footer {
+	width: 100%;
+	background-image: url("../assets/flowers.jpg");
+	background-size: 350%;
+	background-position: 50%;
+	background-repeat: no-repeat;
+	font-family: "Montserrat", sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+	overflow: hidden;
+	color: #fff;
+}
+.bgShadow {
+	background-color: rgba(19, 65, 25, 0.9);
+}
+.companyName {
+	padding: 2rem;
+	padding-top: 2.4rem;
+	letter-spacing: 0.1rem;
+	word-spacing: 0.2rem;
+	font-size: 1.7rem;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.contentBox {
+	display: flex;
+	flex-direction: column;
+
+	h3 {
+		text-align: center;
+		font-size: 1.8rem;
+		font-size: 2rem;
+		text-transform: uppercase;
+		font-weight: 500;
+		font-weight: 600;
+		letter-spacing: 0.1rem;
+		padding: 1rem;
+		text-decoration: underline;
+		color: rgb(161, 174, 88);
+	}
+	span {
+		margin-left: 1rem;
+	}
+}
+
+.textInfo {
+	text-align: center;
+	text-align: left;
+	margin-top: 2rem;
+	letter-spacing: 0.1rem;
+	p {
+		padding: 0.7rem;
+		font-size: 1.5rem;
+	}
+	.lastParagraph {
+		text-align: center;
+		margin-bottom: 2.2rem;
+		span {
+			margin-left: 0;
+		}
+	}
+}
+
+.iconsMedia {
+	i {
+		padding: 1rem;
+		padding-top: 1.3rem;
+		padding-bottom: 4rem;
+		font-size: 6rem;
+		color: whitesmoke;
+	}
+}
+.footerBottom {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	background-color: rgba(19, 65, 25, 0.9);
+
+	.overline {
+		width: 95%;
+		height: 1px;
+		margin-left: auto;
+		margin-right: auto;
+		background-color: $gray-shadow;
+	}
+
+	p {
+		margin-left: auto;
+		margin-right: auto;
+		padding: 15px;
+		text-transform: uppercase;
+		font-size: 1rem;
+		letter-spacing: 0.8px;
+	}
+	span {
+		margin-left: 1rem;
+		letter-spacing: 0.1rem;
+		// color:rgb(161, 174, 88);
+		font-weight: bold;
+		text-decoration: underline;
+	}
+}
+
+// width: 992px
+@include responsive(lg) {
+	.footer {
+		background-size: 200%;
+	}
+}
+// width: 1200px
+@include responsive(xl) {
+	.contentBox{
+		flex-direction: row;
+
+		.textInfo{
+			width: 300px;
+			height: 250px;
+			margin-top: 5rem;
+			margin-bottom: 1rem;
+			// border: 1px solid red;
+			h3{
+				padding-bottom: 2rem;
+			}
+			p {
+				padding-left: 3rem;
+			}
+			.lastParagraph {
+				padding-left: 0rem;
+			}
+		}
+		.iconsMedia {
+			width: 300px;
+			height: 250px;
+			margin-top: 5rem;
+			margin-bottom: 1rem;
+			text-align: center;
+			// border: 1px solid red;
+
+			h3{
+				padding-bottom: 3rem;
+			}
+		}
+
+	}
+}

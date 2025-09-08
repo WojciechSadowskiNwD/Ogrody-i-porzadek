@@ -7,13 +7,13 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 400px;
+	height: 470px;
+	min-height: 62vh;
 	padding: 20px;
 	text-align: center;
-	background-image: url("../assets/ogród-kwiaty.jpg");
 	background-image: url("../assets/header-photo-2.png");
-	background-size: cover;
-	background-position: center;
+	background-size: 210%;
+	background-position: 55% 10%;
 	overflow: hidden;
 
 	&::after {
@@ -39,6 +39,15 @@
 	color: $text-color;
 }
 
+@media (min-width: 390px) {
+	.header {
+		height: 550px;
+		min-height: 65vh;
+		background-size: 220%;
+	}
+}
+
+// width: 576px
 @include responsive(sm) {
 	.header {
 		height: 480px;
@@ -49,24 +58,34 @@
 		line-height: 1.6;
 	}
 }
+// width: 768px
 @include responsive(md) {
 	.header {
-		height: 540px;
+		height: 550px;
+		min-height: 70vh;
+		background-size: 200%;
 		background-position: 50% 0%;
 	}
 }
+// width: 992px
 @include responsive(lg) {
 	.title {
 		width: 500px;
 		font-size: 2.6rem;
-		word-spacing: .3rem;
+		word-spacing: 0.3rem;
+	}
+	.header {
+		height: 72vh;
+		background-size: 100%;
 	}
 }
+// width: 1200px
 @include responsive(xl) {
 	.header {
 		height: 580px;
 	}
 }
+// width: 1400px
 @include responsive(xxl) {
 	.header {
 		height: 600px;
@@ -74,9 +93,10 @@
 	.title {
 		width: 500px;
 		font-size: 2.8rem;
-		word-spacing: .4rem;
+		word-spacing: 0.4rem;
 	}
 }
+// width 1500px
 @include responsive(maximum) {
 	.header {
 		height: 620px;

@@ -6,7 +6,6 @@
 	width: 100%;
 	max-width: 640px;
 	height: 680px;
-	// background-color: rgba(255, 0, 0, 0.128);
 }
 
 .viewport {
@@ -30,7 +29,7 @@
 }
 .btn {
 	position: absolute;
-	top: -8px;
+	bottom: -20px;
 	right: 50%;
 	width: 60px;
 	border-radius: 50%;
@@ -42,13 +41,20 @@
 
 .btnNext {
 	right: 30%;
-	// right: 12px;
-	// transform: translate(110%, -50%);
 }
 .btnPrev {
 	left: 32%;
-	// left: 12px;
-	// transform: translate(-10%, -50%);
+}
+
+@media (min-width: 375px) {
+	.btn {
+		bottom: 0px;
+	}
+}
+@media (min-width: 412px) {
+	.btn {
+		bottom: 20px;
+	}
 }
 
 // width 576px
@@ -63,6 +69,9 @@
 	}
 	.btnPrev {
 		left: 34%;
+	}
+	.btn {
+		bottom: -80px;
 	}
 }
 
@@ -82,7 +91,7 @@
 		}
 	}
 	.btn {
-		top: 90%;
+		bottom: 0px;
 	}
 	.btnNext {
 		right: calc(50% - 70px);
