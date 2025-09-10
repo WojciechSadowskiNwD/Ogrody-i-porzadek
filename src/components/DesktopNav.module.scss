@@ -1,7 +1,7 @@
 @import "../styles/global.scss";
 
 .nav {
-	margin-right: 5%;
+	margin-right: 1%;
 	padding-bottom: 5px;
 	min-width: 380px;
 
@@ -21,6 +21,7 @@
 	position: relative;
 	padding: 10px 5px;
 	transition: 0.3s;
+	cursor: pointer;
 
 	&::after {
 		content: "";
@@ -40,45 +41,38 @@
 		transform: scaleX(1);
 	}
 }
+
+// width: 992px
+@include responsive(lg) {
+	.nav {
+		margin-right: 3%;
+	}
+}
+
 // width 1200
 @include responsive(xl) {
 	.nav {
-		padding-right: 6%;
-		min-width: 550px;
+		margin-right: 1%;
 		.list {
+			min-width: 100%;
 			font-size: 1.7rem;
-			li{
+			li {
 				display: flex;
 				align-items: center;
+				padding-right: 1rem;
 			}
-		}
-	}
-}
-// width 1400
-@include responsive(xxl) {
-	.nav {
-		margin-right: 4%;
-		padding-right: 0;
-		min-width: 600px;
-		.list {
-			font-size: 1.7rem;
 		}
 	}
 }
 
-// width 1500
-@include responsive(maximum) {
+// width 1400
+@include responsive(xxl) {
 	.nav {
-		// background-color: #ffffff0a;
+		margin-right: 0%;
+		padding-right: 0;
+		min-width: 500px;
 		.list {
 			font-size: 1.7rem;
-			li{
-				padding-right: 3rem;
-				
-				&:last-child {
-					padding-right: 0rem;
-				}
-			}
 		}
 	}
 }

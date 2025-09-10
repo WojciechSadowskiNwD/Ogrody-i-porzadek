@@ -3,6 +3,7 @@ import styles from "./OpenSection.module.scss";
 
 type OpenSectionProps = {
 	title: string;
+	id?: string;
 	beforeSpan: string;
 	spanTxt?: string;
 	afterSpan?: string;
@@ -11,6 +12,7 @@ type OpenSectionProps = {
 
 export default function OpenSection({
 	title,
+	id,
 	beforeSpan,
 	spanTxt,
 	afterSpan,
@@ -26,7 +28,7 @@ export default function OpenSection({
 	return (
 		<div>
 			<div className={styles.titleContainer}>
-				<h2 className={styles.sectionTitle}>{title}</h2>
+				<h2 id={id} className={styles.sectionTitle}>{title}</h2>
 			</div>
 			{children ? <h2 className={styles.companyName}>{children}</h2> : ""}
 

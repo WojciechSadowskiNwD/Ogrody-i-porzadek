@@ -50,6 +50,13 @@
 	}
 }
 
+// width: 992px
+@include responsive(lg){
+	.reviewDesktop{
+		margin-bottom: 10rem;
+	}
+}
+
 // width 1200px
 @include responsive(xl) {
 	.reviewDesktop {
@@ -63,6 +70,7 @@
 // width 1400px
 @include responsive(xxl) {
 	.reviewDesktop {
+		margin-bottom: 14rem;
 		width: 90vw;
 		max-width: 1400px;
 		height: 680px;

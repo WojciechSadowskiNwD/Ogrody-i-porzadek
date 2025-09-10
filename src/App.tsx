@@ -5,8 +5,8 @@ import AboutUs from "./components/AboutUs";
 import Projects from "./components/Projects";
 import Reviews from "./components/Reviews";
 import SectionButton from "./components/SectionButton";
-import "./App.scss";
 import Footer from "./components/Footer";
+import "./App.scss";
 
 function App() {
 	return (

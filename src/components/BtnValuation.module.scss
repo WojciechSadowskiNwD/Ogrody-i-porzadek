@@ -14,6 +14,14 @@
 	cursor: pointer;
 }
 
+@media (min-width: 412px){
+	.btn_valuation{ 
+		padding: 1.7rem 2.7rem;
+		font-size: 1.6rem;
+	}
+}
+
+// width: 576px
 @include responsive(sm) {
 	.btn_valuation {
 		margin-top: 3.8rem;
@@ -27,11 +35,23 @@
 		}
 	}
 }
+
+// width: 768px
+@include responsive(md) {
+	.btn_valuation {
+		padding: 1.5rem 2.4rem;
+		font-size: 1.7rem;
+	}
+}
+
+// width: 1200px
 @include responsive(xl) {
 	.btn_valuation {
 		padding: 1.6rem 2.5rem;
 	}
 }
+
+// width: 1400px
 @include responsive(xxl) {
 	.btn_valuation {
 		margin-top: 4rem;
@@ -39,6 +59,8 @@
 		font-size: 1.7rem;
 	}
 }
+
+// width: 1500px
 @include responsive(maximum) {
 	.btn_valuation {
 		padding: 1.8rem 2.8rem;

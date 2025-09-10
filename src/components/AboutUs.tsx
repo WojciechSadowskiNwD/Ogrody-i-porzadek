@@ -1,6 +1,7 @@
 import styles from "./AboutUs.module.scss";
 import Content from "./Content";
 import OpenSection from "./OpenSection";
+import WhiteSection from "./WhiteSection";
 
 export type ContentDataType = {
 	title: string;
@@ -61,6 +62,7 @@ export default function AboutUs() {
 		<section className={styles.layout}>
 			<OpenSection
 				title="O nas"
+				id="aboutUs"
 				beforeSpan="- to lokalna, Toruńska firma wyspecjalizowana w tworzeniu oraz pielęgnacji zielonych przestrzeni — "
 				spanTxt="ogrodów estetycznych"
 				afterSpan="funkcjonalnych i dopasowanych do Państwa stylu życia. Nasza praca jest pasją, dla tego dokładamy wszelkich starań aby sprostać wymaganiom nawet najbardziej wymagających klientów."
@@ -69,6 +71,7 @@ export default function AboutUs() {
 			</OpenSection>
 			<Content data={contentData[0]} />
 			<Content data={contentData[1]} />
+			<WhiteSection />
 		</section>
 	);
 }

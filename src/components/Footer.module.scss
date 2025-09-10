@@ -65,12 +65,14 @@
 }
 
 .iconsMedia {
+	margin-bottom: 0.5rem;
 	i {
 		padding: 1rem;
 		padding-top: 1.3rem;
 		padding-bottom: 4rem;
 		font-size: 6rem;
 		color: whitesmoke;
+		transition: 0.3s;
 	}
 }
 .footerBottom {
@@ -98,9 +100,47 @@
 	span {
 		margin-left: 1rem;
 		letter-spacing: 0.1rem;
-		// color:rgb(161, 174, 88);
 		font-weight: bold;
 		text-decoration: underline;
+	}
+}
+
+// width: 576px
+@include responsive(sm) {
+	.textInfo {
+		margin-top: 2.5rem;
+		margin-bottom: 1rem;
+	}
+	.iconsMedia {
+		margin-bottom: 1rem;
+
+		h3 {
+			margin-bottom: 0.5rem;
+		}
+	}
+	.footerBottom {
+		p {
+			font-size: 1.1rem;
+		}
+	}
+}
+
+// width: 768px
+@include responsive(md) {
+	.iconsMedia {
+		i:hover {
+			color: rgb(161, 174, 88);
+		}
+	}
+	.footerBottom {
+		span {
+			a {
+				transition: 0.3s;
+			}
+			a:hover {
+				color: orange;
+			}
+		}
 	}
 }
 
@@ -110,18 +150,22 @@
 		background-size: 200%;
 	}
 }
+
 // width: 1200px
 @include responsive(xl) {
-	.contentBox{
+	.companyName{
+		font-size: 1.8rem;
+	}
+
+	.contentBox {
 		flex-direction: row;
 
-		.textInfo{
+		.textInfo {
 			width: 300px;
 			height: 250px;
 			margin-top: 5rem;
 			margin-bottom: 1rem;
-			// border: 1px solid red;
-			h3{
+			h3 {
 				padding-bottom: 2rem;
 			}
 			p {
@@ -137,12 +181,15 @@
 			margin-top: 5rem;
 			margin-bottom: 1rem;
 			text-align: center;
-			// border: 1px solid red;
 
-			h3{
+			h3 {
 				padding-bottom: 3rem;
 			}
 		}
-
+	}
+	.footerBottom {
+		p {
+			font-size: 1.2rem;
+		}
 	}
 }

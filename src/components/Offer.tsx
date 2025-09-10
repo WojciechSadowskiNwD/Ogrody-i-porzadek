@@ -69,6 +69,7 @@ export default function Offer() {
 		<section>
 			<OpenSection
 				title="Oferta"
+				id="product"
 				beforeSpan="Tworzymy ogrody, które zachwycają o każdej porze roku. Od kompleksowych aranżacji po bieżącą "
 				spanTxt="pielęgnację terenów zielonych"
 				afterSpan="– dbamy o każdy detal. Oferujemy także usługi porządkowe dla osiedli mieszkaniowych. Sprawdź nas!"

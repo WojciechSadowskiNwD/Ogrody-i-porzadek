@@ -1,6 +1,5 @@
 @import "../styles/global.scss";
 
-// This element is intended to fill the white space behind the navigation bar
 .backgroundBar {
 	position: absolute;
 	top: 0;
@@ -72,7 +71,7 @@
 // width: 1200px
 @include responsive(xl) {
 	.inner {
-		gap: 45%;
+		gap: 30%;
 	}
 	.brand {
 		margin-left: 1%;
@@ -81,21 +80,23 @@
 // width: 1400px
 @include responsive(xxl) {
 	.inner {
-		gap: 40%;
+		margin-left: 3%;
+		margin-right: 3%;
+		gap: 54%;
 	}
 	.brand {
 		margin-left: 0%;
 	}
 }
-// width: 1400px
+
+// width: 1500px
 @include responsive(maximum) {
-	.topbar {
-		padding-left: 4%;
-	}
 	.inner {
-		max-width: 100%;
+		margin-left: 4%;
+		margin-right: 4%;
+		gap: 62%;
 	}
 	.brand {
-		width: 180px;
+		margin-left: 0%;
 	}
 }

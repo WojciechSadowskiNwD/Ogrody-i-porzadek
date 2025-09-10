@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import styles from "./AccordionMenu.module.scss";
 type AccordionMenuProps = {
 	isOpen: boolean;
+	onClick: (id:string) => void;
 };
 
-export default function AccordionMenu({ isOpen }: AccordionMenuProps) {
+export default function AccordionMenu({ isOpen, onClick }: AccordionMenuProps) {
 	const [scrollDown, setScrollDown] = useState(false);
 	const [lastY, setLastY] = useState(0);
 
@@ -27,10 +28,29 @@ export default function AccordionMenu({ isOpen }: AccordionMenuProps) {
 			}`}
 		>
 			<ul className={styles.list}>
-				<li>oferta</li>
-				<li>realizacje</li>
-				<li>o nas</li>
-				<li>kontakt</li>
+				<li
+						className={styles.navLink}
+						onClick={() => onClick("product")}
+					>
+						oferta
+					</li>
+					<li
+						className={styles.navLink}
+						onClick={() => onClick("projects")}
+					>
+						realizacje
+					</li>
+					<li
+						className={styles.navLink}
+						onClick={() => onClick("aboutUs")}
+					>
+						o nas
+					</li>
+					<li>
+						<a className={styles.navLink} href="#">
+							kontakt
+						</a>
+					</li>
 			</ul>
 		</div>
 	);

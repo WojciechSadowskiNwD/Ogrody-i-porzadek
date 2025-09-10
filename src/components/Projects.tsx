@@ -1,11 +1,12 @@
-import InfiniteSlider from "./InfiniteSlider";
-import OpenSection from "./OpenSection";
-import SlideCard from "./SlideCard";
 import img1 from "../assets/photos/Implementations/zlecenie_1.jpg";
 import img2 from "../assets/photos/Implementations/zlecenie_2.jpg";
 import img3 from "../assets/photos/Implementations/zlecenie_3.jpg";
 import img5 from "../assets/photos/Implementations/zlecenie_5.jpg";
 import img6 from "../assets/photos/Implementations/zlecenie_6.jpg";
+import OpenSection from "./OpenSection";
+import InfiniteSlider from "./InfiniteSlider";
+import SlideCard from "./SlideCard";
+import WhiteSection from "./WhiteSection";
 
 const dataSlides = [{
 	image: img1,
@@ -44,8 +45,10 @@ const dataSlides = [{
 export default function Projects() {
 	return (
 		<section>
+			<WhiteSection />
 			<OpenSection
 				title="Realizacje"
+				id="projects"
 				beforeSpan="Ogrody, które zostały przez nas stworzone z najwyższą starannością oraz precyzją."
 				spanTxt=" Poniżej przykładowe realizacje"
 			/>
