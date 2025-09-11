@@ -4,6 +4,7 @@ import MobileNav from "./MobileNav";
 import DesktopNav from "./DesktopNav";
 import logo from "../assets/logo_v2.1.png";
 import styles from "./TopBar.module.scss";
+import { Link } from "react-router-dom";
 
 export const TopBar: React.FC = () => {
 	const isDesktop = useDesktopNav(768);
@@ -21,7 +22,9 @@ export const TopBar: React.FC = () => {
 				}`}
 			>
 				<div className={styles.inner}>
-					<img className={styles.brand} src={logo} alt="logo company" />
+					<Link to="/">
+						<img className={styles.brand} src={logo} alt="logo company" />
+					</Link>
 
 					{isDesktop ? <DesktopNav /> : <MobileNav />}
 				</div>

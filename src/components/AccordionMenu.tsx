@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./AccordionMenu.module.scss";
+import { Link } from "react-router-dom";
 type AccordionMenuProps = {
 	isOpen: boolean;
 	onClick: (id:string) => void;
@@ -46,10 +47,8 @@ export default function AccordionMenu({ isOpen, onClick }: AccordionMenuProps) {
 					>
 						o nas
 					</li>
-					<li>
-						<a className={styles.navLink} href="#">
-							kontakt
-						</a>
+					<li className={styles.navLink}>
+						<Link to="/contact">Kontakt</Link>
 					</li>
 			</ul>
 		</div>

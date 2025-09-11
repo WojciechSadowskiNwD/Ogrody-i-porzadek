@@ -1,28 +1,14 @@
-import { TopBar } from "./components/TopBar";
-import Header from "./components/Header";
-import Offer from "./components/Offer";
-import AboutUs from "./components/AboutUs";
-import Projects from "./components/Projects";
-import Reviews from "./components/Reviews";
-import SectionButton from "./components/SectionButton";
-import Footer from "./components/Footer";
-import "./App.scss";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Homepage from "./Homepage";
+import Contact from "./Contact";
 
-function App() {
+export default function App() {
 	return (
-		<>
-			<TopBar />
-			<Header />
-			<main>
-				<Offer />
-				<AboutUs />
-				<SectionButton />
-				<Projects />
-				<Reviews />
-			</main>
-			<Footer />
-		</>
+		<BrowserRouter>
+			<Routes>
+                <Route path="/" element={<Homepage/>}/>
+                <Route path="contact" element={<Contact />}/>
+            </Routes>
+		</BrowserRouter>
 	);
 }
-
-export default App;
