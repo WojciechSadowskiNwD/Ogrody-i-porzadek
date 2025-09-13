@@ -67,7 +67,7 @@ const productsData: ProductProps[] = [
 export default function Offer() {
 	return (
 		<section>
-			<OpenSection
+			<OpenSection 
 				title="Oferta"
 				id="product"
 				beforeSpan="Tworzymy ogrody, które zachwycają o każdej porze roku. Od kompleksowych aranżacji po bieżącą "
