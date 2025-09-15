@@ -8,7 +8,7 @@ import "./App.scss";
 
 function Contact() {
 	return (
-		<div>
+		<div style={{position: "relative"}}>
 			<TopBar />
 			<section>
 				<OpenSection
@@ -48,8 +48,8 @@ function Contact() {
 						<CustomInput
 							customStyle={true}
 							label="Zakładanie ogrodu"
-							id="CheckCreatingGarden"
-							name="CheckCreatingGarden"
+							id="creatingGarden"
+							name="creatingGarden"
 							type="checkbox"
 						/>
 						<CustomInput
