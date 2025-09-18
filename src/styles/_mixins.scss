@@ -1,5 +1,3 @@
-// copy by my last project interactive-matrix....
-
 @mixin responsive($breakpoint) {
 	@if $breakpoint == sm {
 		@media (min-width: 576px) {

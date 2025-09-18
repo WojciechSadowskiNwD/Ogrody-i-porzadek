@@ -10,7 +10,8 @@ export default function WindowError({ closeWin }: WindowErrorProps) {
 			<h2 className={styles.h2}>Uzupełnij proszę brakujące pola!</h2>
 			
 			<ul>
-				<li>Imię nazwisko/ nazwa firmy muszą zawierać od 5 do, maksymalnie 20 znków.</li>
+				<li>Imię nazwisko/ nazwa firmy muszą zawierać od 5 do, maksymalnie 30 znków.</li>
+				<li>Pamiętaj aby podać prawidłowy adres email.</li>
 				<li>Wiek może zawierać wyłącznie cyfry, maksymalna wartość to 99</li>
 				<li>Numer telefonu powinien składać się z 9 cyfr.</li>
 				<li>Zaznacz conajmniej jedną z usług, lub zostaw komentarz.</li>

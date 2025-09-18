@@ -82,8 +82,6 @@ function Contact() {
 							cols={30}
 							rows={10}
 						></textarea>
-
-						<button>Wyślij</button>
 					</Form>
 				</div>
 			</section>

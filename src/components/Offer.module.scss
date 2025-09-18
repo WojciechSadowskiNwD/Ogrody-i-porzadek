@@ -1,34 +1,6 @@
-@import "../styles/global.scss";
+@use "../styles/global.scss" as *;
 
-// .sectionTitle {
-// 	padding: 10px;
-// 	margin: 15px;
-// 	margin-top: 25px;
-// 	width: 160px;
-// 	align-self: center;
-// 	text-align: center;
-// 	font-size: 2.4rem;
-// 	letter-spacing: 0.1rem;
-// 	font-weight: 500;
-// 	text-transform: uppercase;
-// 	border-bottom: 2px solid #33333371;
-// 	border-radius: 15px;
-// }
-// .introText {
-// 	font-size: 2.4rem;
-// 	padding: 20px;
-// 	text-align: justify;
-// 	.spanA {
-// 		font-weight: 500;
-// 		color: rgb(102, 167, 42);
-// 	}
-// 	p {
-// 		margin-top: 25px;
-// 		letter-spacing: 0.1rem;
-// 		word-spacing: 0.7rem;
-// 		text-align: center;
-// 	}
-// }
+
 .layoutProducts {
 	width: 100%;
 }

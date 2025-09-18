@@ -1,112 +1,116 @@
 import { useState, type ComponentPropsWithoutRef, type FormEvent } from "react";
-import { useAppDispatch } from "../hooks/redux";
-import { addSubmission } from "./contactSlice";
-import styles from "./Form.module.scss";
+import { useAppDispatch, useAppSelector } from "../hooks/redux";
+import { setField, resetForm } from "./contactSlice";
+import { sendContact } from "../store/formThunks";
 import WindowError from "./WindowError";
+import styles from "./Form.module.scss";
 
 type FormProps = ComponentPropsWithoutRef<"form">;
 
 export default function Form({ children }: FormProps) {
-	const [checkFlag, setCheckFlag] = useState(true);
 	const [windowError, setWindowError] = useState(false);
 	const dispatch = useAppDispatch();
 
-	function handleSubmit(e: FormEvent<HTMLFormElement>) {
+	const status = useAppSelector((s) => s.contact.status);
+	const error = useAppSelector((s) => s.contact.error);
+
+	async function handleSubmit(e: FormEvent<HTMLFormElement>) {
 		e.preventDefault();
 		const form = e.currentTarget;
 
 		const formData = new FormData(form);
 		const data = Object.fromEntries(formData) as Record<string, string>;
 
-		const { userName, userEmail, userPhone, txtArea = "" } = data;
+		const name = (data.userName ?? "").toString().trim();
+		const email = (data.userEmail ?? "").toString().trim();
+		const phone = (data.userPhone ?? "").toString();
+		const txtArea = (data.txtArea ?? "").toString();
 
-		//if checkbox not clicked => false
-		const turnToBoolean = (key: string) => Boolean(data[key]);
+		// if checkbox not clicked -> false
+		const changeToBool = (key: string) => Boolean(data[key]);
 
-		// Validation:
-		const isNameCorr =
-			typeof userName === "string" &&
-			/^[A-Za-zĄĆĘŁŃÓŚŹŻąćęłńóśźż]{3,15}$/.test(userName.trim());
-		const isEmailCorr =
-			typeof userEmail === "string" &&
-			/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userEmail.trim());
-		const isPhoneCorr =
-			typeof userPhone === "string" && /^[0-9]{9}$/.test(userPhone);
+		const isNameValid = /^[\p{L}\p{M}0-9 .,'’\-&()]{3,30}$/u.test(name);
+		const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+		const phoneDigits = phone.replace(/\D/g, "");
+		const isPhoneValid = /^\d{9}$/.test(phoneDigits);
+
+		const hasSelectedServiceOrMessage =
+			changeToBool("creatingGarden") ||
+			changeToBool("landscaping") ||
+			changeToBool("cleaning") ||
+			changeToBool("cutting") ||
+			txtArea.trim().length >= 4;
 
 		if (
-			data.creatingGarden ||
-			data.landscaping ||
-			data.cleaning ||
-			data.cutting ||
-			txtArea.length >= 5
+			!isNameValid ||
+			!isEmailValid ||
+			!isPhoneValid ||
+			!hasSelectedServiceOrMessage
 		) {
-			setCheckFlag(false);
-			console.log("conajmniej jedno zaznaczono - OK");
-		} else {
-			setCheckFlag(true);
-			console.log("dodatkowa flaga błędów aktywna! - BŁĄD");
-		}
-
-		if (!isNameCorr || !isEmailCorr || !isPhoneCorr || checkFlag) {
-			// if validation here false, set on this input focus
 			setWindowError(true);
 
-			if (!isNameCorr)
-				(form.elements.namedItem("userName") as HTMLInputElement).focus();
-			else if (!isEmailCorr)
-				(form.elements.namedItem("userEmail") as HTMLInputElement).focus();
-			else if (!isPhoneCorr)
-				(form.elements.namedItem("userPhone") as HTMLInputElement).focus();
-			else (form.elements.namedItem("txtArea") as HTMLInputElement).focus();
+			if (!isNameValid)
+				(form.elements.namedItem("userName") as HTMLInputElement)?.focus();
+			else if (!isEmailValid)
+				(form.elements.namedItem("userEmail") as HTMLInputElement)?.focus();
+			else if (!isPhoneValid)
+				(form.elements.namedItem("userPhone") as HTMLInputElement)?.focus();
+			else (form.elements.namedItem("txtArea") as HTMLInputElement)?.focus();
 
-			// return;
+			return;
 		}
-		if (
-			isNameCorr &&
-			isEmailCorr &&
-			isPhoneCorr &&
-			(txtArea.length > 5 ||
-				data.creatingGarden ||
-				data.landscaping ||
-				data.cleaning ||
-				data.cutting)
-		) {
-			setWindowError(false);
-			console.log("warunki spełnione: ");
 
-			dispatch(
-				addSubmission({
-					userName,
-					userEmail,
-					userPhone,
-					txtArea,
-					creatingGarden: turnToBoolean("creatingGarden"),
-					landscaping: turnToBoolean("landscaping"),
-					cleaning: turnToBoolean("cleaning"),
-					cutting: turnToBoolean("cutting"),
-				})
-			);
+		setWindowError(false);
 
+		dispatch(setField({ field: "userName", value: name }));
+		dispatch(setField({ field: "userEmail", value: email }));
+		dispatch(setField({ field: "userPhone", value: phoneDigits }));
+		dispatch(setField({ field: "txtArea", value: txtArea }));
+		dispatch(
+			setField({
+				field: "creatingGarden",
+				value: changeToBool("creatingGarden"),
+			})
+		);
+		dispatch(
+			setField({ field: "landscaping", value: changeToBool("landscaping") })
+		);
+		dispatch(setField({ field: "cleaning", value: changeToBool("cleaning") }));
+		dispatch(setField({ field: "cutting", value: changeToBool("cutting") }));
+
+		// send to backend
+		const result = await dispatch(sendContact());
+
+		if (sendContact.fulfilled.match(result)) {
+			dispatch(resetForm());
 			form.reset();
+			// alert("Dziękujemy! Wiadomość wysłana.");
 		}
 	}
 
-	// Function to close error window!
-	const handleClose = () => {
-		setWindowError(false);
-	};
+	const handleClose = () => setWindowError(false);
 
 	return (
 		<>
 			<form onSubmit={handleSubmit} className={styles.contactForm}>
 				{children}
+				<button
+					className={styles.btnSubmit}
+					type="submit"
+					disabled={status === "pending"}
+				>
+					{status === "pending" ? "Wysyłam…" : "Wyślij"}
+				</button>
 			</form>
+
+			{/*Czy błędnie wypełniono formularz, tak? Pokaż komponent erroru.  */}
 			{windowError && <WindowError closeWin={handleClose} />}
+
+			{/* DO OKODOWANIA - komponent z potwierdzeniem wysłania */}
+			{status === "error" && <p style={{ color: "crimson" }}>Ups: {error}</p>}
+			{status === "success" && (
+				<p style={{ color: "green" }}>Wiadomość wysłana ✅</p>
+			)}
 		</>
 	);
 }
-
-
-
-
-// The Form component has been expanded – form validation. // The WindowError component has been created – displaying a window with information about incorrectly filled input fields. // The redux toolkit library has been installed and a set of required files has been created: store.ts, hooks.ts – facilitating the writing of useSelector and useDispatch thanks to the built-in appropriate types. // Created contactSlice - redux logic, inside 2 functions adding and removing data from initialState (this is where data from the form goes). Wrapped App in Provider.

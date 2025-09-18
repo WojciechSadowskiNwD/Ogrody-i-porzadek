@@ -1,40 +1,65 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
+import { sendContact } from "../store/formThunks";
 
-type ContactFormData = {
-    userName: string;
-    userEmail: string;
-    userPhone: string;
-    creatingGarden: boolean;
-    landscaping: boolean;
-    cleaning: boolean;
-    cutting: boolean;
-    txtArea: string;
-}
+export type ContactFormData = {
+	userName: string;
+	userEmail: string;
+	userPhone: string;
+	txtArea?: string;
+	creatingGarden: boolean;
+	landscaping: boolean;
+	cleaning: boolean;
+	cutting: boolean;
+};
 
-type ContactState = {
-    submissions: ContactFormData[];
-    lastSubmittedAt?: string;
-}
+type ContactState = ContactFormData & {
+	status: "idle" | "pending" | "success" | "error";
+	error?: string;
+};
 
 const initialState: ContactState = {
-    submissions: [],
-    lastSubmittedAt: undefined,
+	userName: "",
+	userEmail: "",
+	userPhone: "",
+	txtArea: "",
+	creatingGarden: false,
+	landscaping: false,
+	cleaning: false,
+	cutting: false,
+	status: "idle",
+	error: undefined,
 };
 
 const contactSlice = createSlice({
 	name: "contact",
 	initialState,
 	reducers: {
-		addSubmission: (state, action: PayloadAction<ContactFormData>) => {
-			state.submissions.push(action.payload);
-			state.lastSubmittedAt = new Date().toISOString();
+		setField: <K extends keyof ContactFormData>(
+			state: ContactState,
+            // give me value from ContactFormData under name K(userName/or something else -> this focused input)
+			action: PayloadAction<{ field: K; value: ContactFormData[K] }>
+		) => {
+			(state as ContactFormData)[action.payload.field] = action.payload.value;
 		},
-        clearSubmissions: (state)=> {
-            state.submissions = [];
-            state.lastSubmittedAt = undefined;
-        }
+		resetForm: () => initialState,
+	},
+
+	//   backend actions - reaction state-s thunk sendContact
+	extraReducers: (builder) => {
+		builder
+			.addCase(sendContact.pending, (state) => {
+				state.status = "pending";
+				state.error = undefined;
+			})
+			.addCase(sendContact.fulfilled, (state) => {
+				state.status = "success";
+			})
+			.addCase(sendContact.rejected, (state, action) => {
+				state.status = "error";
+				state.error = (action.payload as string) || "Błąd wysyłki";
+			});
 	},
 });
 
-export const { addSubmission , clearSubmissions} = contactSlice.actions;
+export const { setField, resetForm } = contactSlice.actions;
 export default contactSlice.reducer;
