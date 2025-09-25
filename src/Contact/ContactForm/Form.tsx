@@ -1,15 +1,23 @@
-import { useState, type ComponentPropsWithoutRef, type FormEvent } from "react";
+import {
+	useEffect,
+	useState,
+	type ComponentPropsWithoutRef,
+	type FormEvent,
+} from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { setField, resetForm } from "./contactSlice";
 import { sendContact } from "../../store/formThunks";
 import WindowError from "./WindowError";
 import styles from "./Form.module.scss";
 import BtnValuation from "../../components/BtnValuation";
+import ConfirmSent from "./ConfirmSent";
+import { AnimatePresence } from "framer-motion";
 
 type FormProps = ComponentPropsWithoutRef<"form">;
 
 export default function Form({ children }: FormProps) {
-	const [windowError, setWindowError] = useState(false);
+	const [windowError, setWindowError] = useState<boolean>(false);
+	const [windowSuccess, setWindowSuccess] = useState<boolean>(false);
 	const dispatch = useAppDispatch();
 
 	const status = useAppSelector((s) => s.contact.status);
@@ -85,17 +93,26 @@ export default function Form({ children }: FormProps) {
 		if (sendContact.fulfilled.match(result)) {
 			dispatch(resetForm());
 			form.reset();
-			// alert("Dziękujemy! Wiadomość wysłana.");
+			setWindowSuccess(true);
 		}
 	}
 
 	const handleClose = () => setWindowError(false);
 
+	useEffect(() => {
+		if (windowSuccess === true) {
+			const timerId = setTimeout(() => {
+				setWindowSuccess(false);
+			}, 2000);
+
+			return () => clearTimeout(timerId);
+		}
+	}, [windowSuccess]);
+
 	return (
 		<>
 			<form onSubmit={handleSubmit} className={styles.contactForm}>
 				{children}
-
 				<BtnValuation formStyle="true">
 					{status === "pending" ? "Wysyłam..." : "Wyślij"}
 				</BtnValuation>
@@ -105,9 +122,7 @@ export default function Form({ children }: FormProps) {
 
 			{/* DO OKODOWANIA - komponent z potwierdzeniem wysłania */}
 			{status === "error" && <p style={{ color: "crimson" }}>Ups: {error}</p>}
-			{status === "success" && (
-				<p style={{ color: "green" }}>Wiadomość wysłana ✅</p>
-			)}
+			<AnimatePresence>{windowSuccess ? <ConfirmSent /> : ""}</AnimatePresence>
 		</>
 	);
 }
