@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import BtnValuation from "./BtnValuation";
 import styles from "./SectionButton.module.scss";
 
@@ -7,9 +8,12 @@ export default function SectionButton() {
 			<div className={styles.whiteBlock}>
 				<h2 className={styles.title}>Planujesz metamorfozę Twojego ogrodu?</h2>
 				<p className={styles.text}>
-					Napisz nam czego potrzebujesz, może interesuje Cię usługa również sprzątająca - wszystko ustalimy.
+					Napisz nam czego potrzebujesz, może interesuje Cię usługa również
+					sprzątająca - wszystko ustalimy.
 				</p>
-				<BtnValuation />
+				<Link to="/contact">
+					<BtnValuation />
+				</Link>
 			</div>
 		</section>
 	);

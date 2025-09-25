@@ -1,0 +1,50 @@
+.formContainer {
+	display: flex;
+	flex-direction: column;
+}
+
+.h2 {
+	margin-top: 4rem;
+	margin-left: 2rem;
+	margin-bottom: 2rem;
+	font-size: 1.7rem;
+	letter-spacing: 0.15rem;
+	font-weight: 500;
+}
+.extraMargin {
+	margin-top: 5rem;
+}
+
+.ContactTxtArea {
+	min-width: 290px;
+	margin-top: 0.5rem;
+	margin-left: 0;
+	margin-left: 1rem;
+	padding: 1rem 1.5rem;
+	font-size: 1.4rem;
+	letter-spacing: 0.7px;
+	border-radius: 0.5rem;
+	text-align: left;
+	// color: #000;
+	color: rgb(231, 255, 206);
+	background-color: #fff;
+	border: 1px solid #333;
+	color: rgb(231, 255, 206);
+	background-color: rgb(27, 88, 35);
+	border: 1px solid rgb(50, 118, 59);
+	resize: none;
+
+	&:focus {
+		background-color: rgb(27, 88, 35);
+		outline: 1px solid rgb(18, 108, 72);
+	}
+	&::placeholder {
+		color: rgba(255, 255, 255, 0.477);
+		opacity: 1;
+	}
+	&:-webkit-autofill {
+		-webkit-box-shadow: 0 0 0 1000px rgb(27, 88, 35) inset;
+		-webkit-text-fill-color: rgb(231, 255, 206);
+		transition: background-color 5000s ease-in-out 0s;
+	}
+}

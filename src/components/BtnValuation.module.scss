@@ -14,8 +14,19 @@
 	cursor: pointer;
 }
 
-@media (min-width: 412px){
-	.btn_valuation{ 
+.btnForm {
+	display: flex;
+	align-self: center;
+	justify-content: center;
+	padding: 1.5rem 1.5rem;
+	letter-spacing: 0.15em;
+	border-radius: 15px;
+	margin-bottom: 1rem;
+	width: 70%;
+}
+
+@media (min-width: 412px) {
+	.btn_valuation {
 		padding: 1.7rem 2.7rem;
 		font-size: 1.6rem;
 	}

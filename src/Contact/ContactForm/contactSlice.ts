@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import { sendContact } from "../store/formThunks";
+import { sendContact } from "../../store/formThunks";
 
 export type ContactFormData = {
 	userName: string;
@@ -36,7 +36,7 @@ const contactSlice = createSlice({
 	reducers: {
 		setField: <K extends keyof ContactFormData>(
 			state: ContactState,
-            // give me value from ContactFormData under name K(userName/or something else -> this focused input)
+			// give me value from ContactFormData under name K(userName/or something else -> this focused input)
 			action: PayloadAction<{ field: K; value: ContactFormData[K] }>
 		) => {
 			(state as ContactFormData)[action.payload.field] = action.payload.value;

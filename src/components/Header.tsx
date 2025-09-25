@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import BtnValuation from "./BtnValuation";
 import styles from "./Header.module.scss";
 
@@ -8,7 +9,9 @@ export default function Header() {
 				<h1 className={styles.title}>
 					Zadbamy o Twój ogród. Projektowanie i pielęgnacja
 				</h1>
-				<BtnValuation />
+				<Link to="/contact">
+					<BtnValuation />
+				</Link>
 			</div>
 		</header>
 	);

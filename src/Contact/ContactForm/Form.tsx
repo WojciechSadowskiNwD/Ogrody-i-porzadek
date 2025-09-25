@@ -1,9 +1,10 @@
 import { useState, type ComponentPropsWithoutRef, type FormEvent } from "react";
-import { useAppDispatch, useAppSelector } from "../hooks/redux";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { setField, resetForm } from "./contactSlice";
-import { sendContact } from "../store/formThunks";
+import { sendContact } from "../../store/formThunks";
 import WindowError from "./WindowError";
 import styles from "./Form.module.scss";
+import BtnValuation from "../../components/BtnValuation";
 
 type FormProps = ComponentPropsWithoutRef<"form">;
 
@@ -94,16 +95,12 @@ export default function Form({ children }: FormProps) {
 		<>
 			<form onSubmit={handleSubmit} className={styles.contactForm}>
 				{children}
-				<button
-					className={styles.btnSubmit}
-					type="submit"
-					disabled={status === "pending"}
-				>
-					{status === "pending" ? "Wysyłam…" : "Wyślij"}
-				</button>
+
+				<BtnValuation formStyle="true">
+					{status === "pending" ? "Wysyłam..." : "Wyślij"}
+				</BtnValuation>
 			</form>
 
-			{/*Czy błędnie wypełniono formularz, tak? Pokaż komponent erroru.  */}
 			{windowError && <WindowError closeWin={handleClose} />}
 
 			{/* DO OKODOWANIA - komponent z potwierdzeniem wysłania */}

@@ -12,3 +12,5 @@ export default function App() {
 		</BrowserRouter>
 	);
 }
+
+// Przycisk w SectionButton oraz w Header otrzymały <Link to="/contact"> prowadzący do formularza.

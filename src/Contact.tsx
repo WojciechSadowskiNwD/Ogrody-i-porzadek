@@ -1,16 +1,18 @@
 import { TopBar } from "./components/TopBar";
 import OpenSection from "./components/OpenSection";
-import Form from "./ContactForm/Form";
-import CustomInput from "./ContactForm/CustomInput";
+import Form from "./Contact/ContactForm/Form";
+import CustomInput from "./Contact/ContactForm/CustomInput";
 import Footer from "./components/Footer";
-import styles from "./ContactForm/Contact.module.scss";
+import styles from "./Contact/ContactForm/Contact.module.scss";
 import "./App.scss";
+import ContactHeader from "./Contact/ContactHeader";
 
 function Contact() {
 	return (
-		<div style={{position: "relative"}}>
+		<div style={{ position: "relative" }}>
 			<TopBar />
-			<section>
+			<ContactHeader />
+			<section className="contactSection">
 				<OpenSection
 					title="Kontakt"
 					beforeSpan="Wypełnij formularz, a my przygotujemy "
