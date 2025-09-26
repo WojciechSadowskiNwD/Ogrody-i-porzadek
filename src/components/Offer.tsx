@@ -2,92 +2,113 @@ import projectImg from "../assets/photos/projektowanie-ogrodów-small.jpg";
 import createImg from "../assets/photos/zakladanie-ogrodu.jpg";
 import cuttingImg from "../assets/photos/garden-cutting.png";
 import cleaningImg from "../assets/photos/window-cleaning.png";
-import Product, {type ProductProps } from "./Product";
+import Product, { type ProductProps } from "./Product";
 import OpenSection from "./OpenSection";
 import styles from "./Offer.module.scss";
+import { motion, type Variants } from "framer-motion";
 
 const productsData: ProductProps[] = [
-	{
-		bgColor: "yellowBgc",
-		img: projectImg,
-		alt: "zdjęcie siedzącego przy stole projektanta, rysującego projekt ogrodu.",
-		title: "Projektowanie ogrodów",
-		services: [
-			"Projekty ogrodów przydomowych",
-			"Projekty ogrodów na dużych powierzchniach",
-			"Kompleksowe projekty zagospodarowania terenów zielonych",
-			"Projekty terenów rekreacyjnych, parków miejskich",
-			"Projekty systemów nawadniania i oświetlenia",
-		],
-	},
-	{
-		bgColor: "brownBgc",
-		img: createImg,
-		extraImgStyle: "img2",
-		alt: "Ogrodnik próbuje zasadzić młodą roślinę w ziemii.",
-		title: "Zakładanie ogrodów",
-		services: [
-			"Kompleksowe zakładanie ogrodów",
-			"Prace ziemne",
-			"Zakładanie trawników",
-			"Nasadzenia roślinne",
-			"Altany, pergole, oczka wodne",
-		],
-	},
-	{
-		bgColor: "greenBgc",
-		img: cuttingImg,
-		extraImgStyle: "img4",
-		alt: "Ogrodnik przycinający żyopłot, w tle sosna a za nią szerokie schody przypominające te znane z szkół publicznych.",
-		title: "Pielęgnacja ogrodów",
-		services: [
-			"Cięcia roślin",
-			"Wertykulacja i areacja",
-			"Nawożenie roślin",
-			"Zabezpieczanie przed insektami, chorobami, opryski",
-			"Koszenie oraz sprzątanie",
-		],
-	},
-	{
-		bgColor: "blueBgc",
-		img: cleaningImg,
-		extraImgStyle: "img2",
-		alt: "Okno pokryte płynem czyszczącym, myte za pomocą niebieskiej ściągaczki.",
-		title: "Usługi sprzątające",
-		services: [
-			"Dbanie o czystość obejścia",
-			"Sprzątanie klatek schodowych",
-			"Mycie okien - osiedla",
-			"Grabienie liści",
-			"Odśnieżanie zimą",
-		],
-	},
+  {
+    bgColor: "yellowBgc",
+    img: projectImg,
+    alt: "zdjęcie siedzącego przy stole projektanta, rysującego projekt ogrodu.",
+    title: "Projektowanie ogrodów",
+    services: [
+      "Projekty ogrodów przydomowych",
+      "Projekty ogrodów na dużych powierzchniach",
+      "Kompleksowe projekty zagospodarowania terenów zielonych",
+      "Projekty terenów rekreacyjnych, parków miejskich",
+      "Projekty systemów nawadniania i oświetlenia",
+    ],
+  },
+  {
+    bgColor: "brownBgc",
+    img: createImg,
+    extraImgStyle: "img2",
+    alt: "Ogrodnik próbuje zasadzić młodą roślinę w ziemii.",
+    title: "Zakładanie ogrodów",
+    services: [
+      "Kompleksowe zakładanie ogrodów",
+      "Prace ziemne",
+      "Zakładanie trawników",
+      "Nasadzenia roślinne",
+      "Altany, pergole, oczka wodne",
+    ],
+  },
+  {
+    bgColor: "greenBgc",
+    img: cuttingImg,
+    extraImgStyle: "img4",
+    alt: "Ogrodnik przycinający żyopłot, w tle sosna a za nią szerokie schody przypominające te znane z szkół publicznych.",
+    title: "Pielęgnacja ogrodów",
+    services: [
+      "Cięcia roślin",
+      "Wertykulacja i areacja",
+      "Nawożenie roślin",
+      "Zabezpieczanie przed insektami, chorobami, opryski",
+      "Koszenie oraz sprzątanie",
+    ],
+  },
+  {
+    bgColor: "blueBgc",
+    img: cleaningImg,
+    extraImgStyle: "img2",
+    alt: "Okno pokryte płynem czyszczącym, myte za pomocą niebieskiej ściągaczki.",
+    title: "Usługi sprzątające",
+    services: [
+      "Dbanie o czystość obejścia",
+      "Sprzątanie klatek schodowych",
+      "Mycie okien - osiedla",
+      "Grabienie liści",
+      "Odśnieżanie zimą",
+    ],
+  },
 ];
 
-export default function Offer() {
-	return (
-		<section>
-			<OpenSection 
-				title="Oferta"
-				id="product"
-				beforeSpan="Tworzymy ogrody, które zachwycają o każdej porze roku. Od kompleksowych aranżacji po bieżącą "
-				spanTxt="pielęgnację terenów zielonych"
-				afterSpan="– dbamy o każdy detal. Oferujemy także usługi porządkowe dla osiedli mieszkaniowych. Sprawdź nas!"
-			/>
+const itemVariants: Variants = {
+  hidden: { opacity: 0, x: 60 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: "spring",
+      stiffness: 120,
+      damping: 18,
+    },
+  },
+};
 
-			<div className={styles.layoutProducts}>
-				{productsData.map((product) => (
-					<Product
-						key={product.title}
-						bgColor={product.bgColor}
-						img={product.img}
-						extraImgStyle={product.extraImgStyle}
-						alt={product.alt}
-						title={product.title}
-						services={product.services}
-					/>
-				))}
-			</div>
-		</section>
-	);
+export default function Offer() {
+  return (
+    <section>
+      <OpenSection
+        title="Oferta"
+        id="product"
+        beforeSpan="Tworzymy ogrody, które zachwycają o każdej porze roku. Od kompleksowych aranżacji po bieżącą "
+        spanTxt="pielęgnację terenów zielonych"
+        afterSpan="– dbamy o każdy detal. Oferujemy także usługi porządkowe dla osiedli mieszkaniowych. Sprawdź nas!"
+      />
+
+      <div className={styles.layoutProducts}>
+        {productsData.map((product) => (
+          <motion.div
+            key={product.title}
+            variants={itemVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <Product
+              bgColor={product.bgColor}
+              img={product.img}
+              extraImgStyle={product.extraImgStyle}
+              alt={product.alt}
+              title={product.title}
+              services={product.services}
+            />
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
 }

@@ -117,10 +117,7 @@ export default function Form({ children }: FormProps) {
 					{status === "pending" ? "Wysyłam..." : "Wyślij"}
 				</BtnValuation>
 			</form>
-
 			{windowError && <WindowError closeWin={handleClose} />}
-
-			{/* DO OKODOWANIA - komponent z potwierdzeniem wysłania */}
 			{status === "error" && <p style={{ color: "crimson" }}>Ups: {error}</p>}
 			<AnimatePresence>{windowSuccess ? <ConfirmSent /> : ""}</AnimatePresence>
 		</>
