@@ -11,124 +11,39 @@
 	min-height: 40vh;
 	background-image: url("../assets/photos/Contact/drzewkaIkamyki.png");
 	background-image: url("../assets/photos/Contact/grass.png");
-	background-size: 130%;
-	// background-size: cover;
+	background-size: 140%;
 	background-position: 70% 10%;
 }
 
-// Do skorzystania:
-
-// .header {
-// 	padding: 20px;
-// 	text-align: center;
-// 	overflow: hidden;
-
-// 	&::after {
-// 		content: "";
-// 		position: absolute;
-// 		inset: 0;
-// 		background-color: $hero-shadow-color;
-// 		z-index: 0;
-// 		pointer-events: none;
-// 	}
-// }
-// .content {
-// 	position: relative;
-// 	z-index: 1;
-// }
-
-// .title {
-// 	font-family: "Montserrat", sans-serif;
-// 	font-size: 2.3rem;
-// 	line-height: 1.4;
-// 	letter-spacing: 0.3rem;
-// 	text-shadow: 3px 3px 5px #000;
-// 	color: $text-color;
-// }
-
-// @media (min-width: 390px) {
-// 	.header {
-// 		height: 550px;
-// 		min-height: 65vh    ;
-// 		background-size: 220%;
-// 	}
-// }
-
-// @media (min-width: 412px) {
-// 	.header {
-// 		height: 600px;
-// 		min-height: 70vh;
-// 		background-size: 235%;
-// 	}
-// 	.title {
-// 		width: 350px;
-// 		line-height: 1.5;
-// 		font-size: 2.4rem;
-// 	}
-// }
-
-// // width: 576px
-// @include responsive(sm) {
-// 	.header {
-// 		height: 620px;
-// 		min-height: 70vh;
-// 		padding: 40px;
-// 	}
-// 	.title {
-// 		font-size: 2.5rem;
-// 		line-height: 1.6;
-// 	}
-// }
-// // width: 768px
-// @include responsive(md) {
-// 	.header {
-// 		height: 550px;
-// 		min-height: 70vh;
-// 		background-size: 200%;
-// 		background-position: 50% 0%;
-// 	}
-// 	.title {
-// 		width: 80%;
-// 		font-size: 2.6rem;
-// 		line-height: 1.7;
-// 	}
-// }
-// // width: 992px
-// @include responsive(lg) {
-// 	.title {
-// 		width: 500px;
-// 		font-size: 2.6rem;
-// 		word-spacing: 0.3rem;
-// 	}
-// 	.header {
-// 		height: 72vh;
-// 		background-size: 100%;
-// 	}
-// }
-// // width: 1200px
-// @include responsive(xl) {
-// 	.header {
-// 		height: 580px;
-// 	}
-// }
-// // width: 1400px
-// @include responsive(xxl) {
-// 	.header {
-// 		height: 600px;
-// 	}
-// 	.title {
-// 		width: 500px;
-// 		font-size: 2.8rem;
-// 		word-spacing: 0.4rem;
-// 	}
-// }
-// // width 1500px
-// @include responsive(maximum) {
-// 	.header {
-// 		height: 620px;
-// 	}
-// 	.title {
-// 		width: 550px;
-// 		font-size: 3rem;
-// 	}
-// }
+@include responsive(md) {
+	.contactHeader {
+		background-size: cover;
+	}
+}
+@include responsive(lg) {
+	.contactHeader {
+		height: 370px;
+		min-height: 40vh;
+		background-image: url("../assets/photos/Contact/grass_big.png");
+		background-size: cover;
+		background-position: 70% 20%;
+	}
+}
+@include responsive(xl) {
+	.contactHeader {
+		height: 420px;
+		min-height: 45vh;
+		background-position: 70% 30%;
+	}
+}
+@include responsive(xxl) {
+	.contactHeader {
+		height: 480px;
+		background-position: 70% 30%;
+	}
+}
+@include responsive(maximum){
+	.contactHeader {
+		background-position: 70% 40%;
+	}
+}

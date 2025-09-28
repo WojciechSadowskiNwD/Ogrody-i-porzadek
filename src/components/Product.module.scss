@@ -167,13 +167,13 @@
 // width 1200px
 @include responsive(xl) {
 	.categoryBlock {
-		width: 49%;
-		min-width: 49%;
-		max-width: 49%;
+		width: 540px;
+		height: 420px;
 		gap: 3rem;
+		// background-color: red;
 	}
 	.imgFrame {
-		height: 260px;
+		height: 260px; 
 		flex: 0 0 240px;
 		margin-right: 0;
 		margin-right: 15px;
@@ -204,6 +204,13 @@
 }
 // width 1400px
 @include responsive(xxl) {
+	.categoryBlock {
+		width: 630px;
+		height: 440px;
+		gap: 3rem;
+		// background-color: red;
+	}
+
 	.contentBox {
 		.contentTitle {
 			margin-bottom: 25px;
@@ -214,5 +221,10 @@
 				font-size: 2rem;
 			}
 		}
+	}
+}
+@include responsive(maximum){
+	.categoryBlock {
+		width: 680px;
 	}
 }

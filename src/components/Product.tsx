@@ -37,5 +37,5 @@ export default function Product({
 				</ul>
 			</div>
 		</div>
-	);
+	); 
 }

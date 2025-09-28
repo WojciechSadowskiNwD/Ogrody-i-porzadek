@@ -36,6 +36,7 @@ section {
 	padding: 10px;
 	background-color: #fff;
 	color: #000;
+	overflow: hidden;
 }
 .contactSection{
 	padding-bottom: 12rem;
@@ -75,6 +76,10 @@ section {
 @include responsive(xl) {
 	.fa-circle-check {
 		font-size: 2.9rem;
+	}
+	.formContainer{
+		max-width: 1000px;
+		// background-color: red;
 	}
 }
 // width: 1500px

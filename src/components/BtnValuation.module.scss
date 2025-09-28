@@ -45,6 +45,10 @@
 			background-color: $mobile-accordion-color;
 		}
 	}
+	.btnForm {
+		margin-bottom: 1.8rem;
+		width: 27rem;
+	}
 }
 
 // width: 768px
@@ -52,6 +56,9 @@
 	.btn_valuation {
 		padding: 1.5rem 2.4rem;
 		font-size: 1.7rem;
+	}
+	.btnForm {
+		width: 23rem;
 	}
 }
 

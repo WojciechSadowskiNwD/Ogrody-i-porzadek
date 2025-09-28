@@ -28,6 +28,6 @@ export default function SlideCard({
 					<p>{textContent}</p>
 				</div>
 			</div>
-		</div>
+		</div> 
 	);
 }

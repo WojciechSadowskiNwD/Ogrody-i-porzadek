@@ -6,6 +6,7 @@ import Product, { type ProductProps } from "./Product";
 import OpenSection from "./OpenSection";
 import styles from "./Offer.module.scss";
 import { motion, type Variants } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const productsData: ProductProps[] = [
   {
@@ -17,7 +18,7 @@ const productsData: ProductProps[] = [
       "Projekty ogrodów przydomowych",
       "Projekty ogrodów na dużych powierzchniach",
       "Kompleksowe projekty zagospodarowania terenów zielonych",
-      "Projekty terenów rekreacyjnych, parków miejskich",
+      "Projekty terenów rekreacyjnych",
       "Projekty systemów nawadniania i oświetlenia",
     ],
   },
@@ -65,20 +66,39 @@ const productsData: ProductProps[] = [
   },
 ];
 
-const itemVariants: Variants = {
-  hidden: { opacity: 0, x: 60 },
-  show: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      type: "spring",
-      stiffness: 120,
-      damping: 18,
-    },
-  },
-};
 
 export default function Offer() {
+  const [delayValue, setDelayValue] = useState<number>(0);
+  
+  useEffect(()=>{
+    const handleResize = () => {
+      if(window.innerWidth >= 1200) {
+        setDelayValue(0.5);
+      }else{
+        setDelayValue(0);
+      }
+    };
+    
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  },[]);
+
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, x: 60 },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 120,
+        damping: 18,
+        delay: delayValue,
+      },
+    },
+  };
+
   return (
     <section>
       <OpenSection

@@ -1,3 +1,5 @@
+@use "../../styles/global.scss" as *;
+
 .customInputBox {
 	display: flex;
 	flex-direction: column;
@@ -27,7 +29,7 @@
 	letter-spacing: 0.15rem;
 	text-align: left;
 	border-radius: 0.5rem;
-	color: rgb(231, 255, 206); 
+	color: rgb(231, 255, 206);
 	background-color: rgb(30, 91, 38);
 	border: 1px solid rgb(50, 118, 59);
 
@@ -52,12 +54,79 @@
 	max-height: 50px;
 	min-height: 50px;
 	margin-bottom: 0;
-    
+
 	input {
-        margin: 0;
+		margin: 0;
+		margin-left: 0.5rem;
 		margin-right: 1rem;
 		min-width: 2rem;
 		height: 2rem;
 	}
-	// background-color: rgba(255, 0, 0, 0.078);
+}
+
+@media (min-width: 390px) {
+	.customStyle {
+		input {
+			margin-left: 0.5rem;
+		}
+	}
+}
+@media (min-width: 412px) {
+	.customInputBox {
+		width: 70%;
+		min-width: 320px;
+	}
+	.customInput {
+		min-width: 300px;
+	}
+	.customStyle {
+		input {
+			margin-left: 1rem;
+			margin-right: 1.2rem;
+		}
+	}
+}
+@include responsive(sm) {
+	.customInputBox {
+		width: 75%;
+		min-width: 340px;
+		margin-bottom: 2.2rem;
+	}
+	.customInputLabel {
+		font-size: 1.8rem;
+		margin-left: 0.2rem;
+		margin-bottom: 0.7rem;
+	}
+	.customInput {
+		min-width: 320px;
+	}
+}
+@include responsive(md) {
+	.customInputBox {
+		width: 95%;
+		min-width: 90%;
+		margin-bottom: 1.6rem;
+		// background-color: red;
+	}
+
+	.customInput {
+		min-width: 100%;
+	}
+}
+@include responsive(xxl) {
+	.customInputLabel {
+		font-size: 2rem;
+	}
+	.customInput {
+		font-size: 1.7rem;
+	}
+	.customStyle {
+		max-height: 50px;
+		min-height: 50px;
+
+		input {
+			height: 2.7rem;
+			margin-right: 1.8rem;
+		}
+	}
 }

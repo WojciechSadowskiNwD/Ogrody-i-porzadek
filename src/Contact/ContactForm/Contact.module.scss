@@ -1,3 +1,5 @@
+@use "../../styles/global.scss" as *;
+
 .formContainer {
 	display: flex;
 	flex-direction: column;
@@ -16,19 +18,14 @@
 }
 
 .ContactTxtArea {
-	min-width: 290px;
+	min-width: 90%;
 	margin-top: 0.5rem;
-	margin-left: 0;
-	margin-left: 1rem;
+	margin-left: 1.5rem;
 	padding: 1rem 1.5rem;
 	font-size: 1.4rem;
 	letter-spacing: 0.7px;
 	border-radius: 0.5rem;
 	text-align: left;
-	// color: #000;
-	color: rgb(231, 255, 206);
-	background-color: #fff;
-	border: 1px solid #333;
 	color: rgb(231, 255, 206);
 	background-color: rgb(27, 88, 35);
 	border: 1px solid rgb(50, 118, 59);
@@ -46,5 +43,126 @@
 		-webkit-box-shadow: 0 0 0 1000px rgb(27, 88, 35) inset;
 		-webkit-text-fill-color: rgb(231, 255, 206);
 		transition: background-color 5000s ease-in-out 0s;
+	}
+}
+
+.txtAreaBox {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 0.5rem;
+}
+@media (min-width: 375px) {
+	.txtAreaBox {
+		padding: 1rem;
+	}
+}
+
+@media (min-width: 390px) {
+	.h2 {
+		margin-left: 2.5rem;
+	}
+	.ContactTxtArea {
+		margin-left: auto;
+		margin-right: auto;
+		min-width: 92%;
+	}
+}
+@media (min-width: 412px) {
+	.ContactTxtArea {
+		width: 70%;
+		min-width: 312px;
+	}
+}
+@include responsive(sm) {
+	.h2 {
+		margin-left: 15.5%;
+	}
+	.ContactTxtArea {
+		width: 67%;
+		min-width: 350px;
+	}
+	.customInputBox {
+		.h2 {
+			margin-left: 2.5rem;
+		}
+	}
+	.txtAreaBox {
+		.h2 {
+			margin-left: 17%;
+		}
+	}
+}
+@include responsive(md) {
+	.formContainer {
+		flex-direction: column;
+		flex-direction: row;
+	}
+
+	.inputBox {
+		display: flex;
+		flex-direction: column;
+		width: 47%;
+		height: 390px;
+		padding-top: 1.8rem;
+		// border: 2px solid rgba(255, 0, 0, 0.126);
+	}
+	.customInputBox {
+		width: 43%;
+		// border: 2px solid rgba(0, 0, 255, 0.096);
+
+		.h2 {
+			margin-top: 0rem;
+			margin-left: 2.2rem;
+			margin-bottom: 2.6rem;
+		}
+	}
+	.txtAreaBox {
+		padding-top: 0;
+
+		.h2 {
+			margin-top: 0;
+		}
+	}
+	.ContactTxtArea {
+		width: 72%;
+		min-width: 420px;
+	}
+}
+@include responsive(lg) {
+	.txtAreaBox {
+		width: 80%;
+		// border: 1px solid white;
+		.h2 {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+	.ContactTxtArea {
+		min-width: 420px;
+		max-width: 450px;
+	}
+}
+@include responsive(xl) {
+	.customInputBox {
+		width: 43%;
+		padding-left: 4rem;
+		// border: 2px solid rgba(0, 0, 255, 0.096);
+
+		.h2 {
+			margin-top: 0rem;
+			margin-left: 2.2rem;
+			margin-bottom: 2.6rem;
+		}
+	}
+}
+@include responsive(xxl) {
+	.h2 {
+		font-size: 1.9rem;
+	}
+	.ContactTxtArea {
+		font-size: 1.8rem;
 	}
 }
