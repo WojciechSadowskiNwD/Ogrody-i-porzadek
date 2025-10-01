@@ -1,0 +1,94 @@
+@use "./global.scss" as *;
+
+* {
+	box-sizing: border-box;
+	margin: 0 auto;
+	padding: 0;
+}
+
+html {
+	font-family: "Dosis", sans-serif;
+	font-size: 62.5%; /* 10px */
+	background-color: $primary-colorBgc;
+	scroll-behavior: smooth;
+}
+
+#root {
+	width: 100vw;
+	width: 100%;
+	max-width: 1400px;
+	color: whitesmoke;
+}
+
+.hamburger-react {
+	margin-bottom: 5px;
+}
+
+a {
+	text-decoration: none;
+	color: whitesmoke;
+	cursor: pointer;
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+	padding: 10px;
+	color: #000;
+	background-color: #fff;
+	overflow: hidden;
+}
+.contactSection{
+	padding-bottom: 12rem;
+}
+.formContainer{
+	width: 100%;
+}
+
+.fa-circle-check {
+	font-size: 2.7rem;
+	margin-right: 1.5rem;
+	color: $mobile-accordion-color;
+}
+
+.fa-caret-right, .fa-caret-left{
+	font-size: 4rem;
+	padding: .6rem;
+	color: rgb(239, 239, 239);
+}
+
+// width: 576px
+@include responsive(sm) {
+	section {
+		padding: 25px;
+	}
+}
+
+// width 768px
+@include responsive(md) {
+	section {
+		padding: 35px;
+	}
+	.fa-circle-check {
+		font-size: 2.8rem;
+	}
+}
+
+// width: 1200px
+@include responsive(xl) {
+	.fa-circle-check {
+		font-size: 2.9rem;
+	}
+	.formContainer{
+		max-width: 1000px;
+	}
+}
+
+// width: 1500px
+@include responsive(maximum) {
+	#root {
+		max-width: 1600px;
+	}
+}

@@ -1,0 +1,73 @@
+@use "./../../../../styles/global.scss" as *;
+
+.error_window {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 300px;
+	height: 380px;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 10px;
+	font-size: 1.6rem;
+	letter-spacing: 0.4px;
+	word-spacing: 1.5px;
+	color: crimson;
+	background-color: #fff;
+	border: 2px solid #000;
+	z-index: 999;
+
+	.h2 {
+		margin-top: 1rem;
+		margin-bottom: 1.5rem;
+		font-size: 1.55rem;
+		font-weight: bold;
+		text-transform: none;
+	}
+	ul {
+		width: 80%;
+		list-style-type: disc;
+		font-size: 15px;
+	}
+	li {
+		padding: 0.5rem;
+	}
+
+	.btn_close_window {
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		bottom: 15px;
+		margin-top: 30px;
+		padding: 6px 10px;
+		font-size: 16px;
+		transition: 0.4s;
+		cursor: pointer;
+
+		&:hover {
+			color: #fff;
+			background-color: #000;
+		}
+	}
+}
+
+// width 1200px
+@include responsive(xl) {
+	.error_window {
+		width: 420px;
+		height: 420px;
+		top: 50%;
+
+		.h2 {
+			margin-top: 1.1rem;
+			margin-bottom: 2.5rem;
+			font-size: 1.7rem;
+		}
+		li {
+			padding-bottom: 0.8rem;
+		}
+	}
+}

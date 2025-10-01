@@ -1,0 +1,54 @@
+@use "../../../../styles/global.scss" as *;
+
+.confirmSent {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%);
+	width: 250px;
+	height: 100px;
+	border-radius: 18px;
+	color: #000;
+	background-color: #5bac85;
+	border: 2px solid $primary-color;
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+	z-index: 999;
+
+	.h2 {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		line-height: 2;
+		font-size: 1.7rem;
+		letter-spacing: 1px;
+		word-spacing: .2rem;
+		text-transform: none;
+		// color: #407c83;
+		color: #3a5107;
+
+		span {
+			display: block;
+			display: flex;
+			justify-content: center;
+			padding-left: 1rem;
+			align-items: start;
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size: 1.6rem;
+			margin-left: 0.5rem;
+			height: 35px;
+			width: 40px;
+			margin-top: 1rem;
+			color: #4d949c;
+			text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+
+			i{
+				color: #3a5107;
+			}
+		}
+	}
+}
