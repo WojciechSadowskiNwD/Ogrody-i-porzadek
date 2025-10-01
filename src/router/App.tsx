@@ -5,7 +5,7 @@ import Contact from "../pages/Contact";
 
 export default function App() {
 	return (
-		<BrowserRouter>
+		<BrowserRouter basename="/Ogrody-i-porzadek">
 			<ScrollToTop />
 			<Routes>
 				<Route path="/" element={<Homepage />} />
