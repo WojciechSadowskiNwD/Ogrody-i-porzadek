@@ -8,7 +8,7 @@ export default function App() {
 		<BrowserRouter basename="/Ogrody-i-porzadek">
 			<ScrollToTop />
 			<Routes>
-				<Route path="/" element={<Homepage />} />
+				<Route index element={<Homepage />} />
 				<Route path="contact" element={<Contact />} />
 			</Routes>
 		</BrowserRouter>
