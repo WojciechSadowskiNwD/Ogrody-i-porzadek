@@ -1,6 +1,6 @@
-import img1 from "../../photos/reviews/mowing.png";
-import img2 from "../../photos/reviews/trimming.png";
-import img3 from "../../photos/reviews/shears.png";
+import img1 from "../../photos/reviews/mowing.jpg";
+import img2 from "../../photos/reviews/trimming.jpg";
+import img3 from "../../photos/reviews/shears.jpg";
 import { ReviewCardMini } from "./ReviewCardMini";
 import { useInView } from "../../../../hooks/useInView";
 import styles from "./Reviews.module.scss";

@@ -1,7 +1,7 @@
 import projectImg from "../../../components/photos/garden-design-small.jpg";
 import createImg from "../../../components/photos/seedling.jpg";
-import cuttingImg from "../../../components/photos/garden-cutting.png";
-import cleaningImg from "../../../components/photos/window-cleaning.png";
+import cuttingImg from "../../../components/photos/garden-cutting.jpg";
+import cleaningImg from "../../../components/photos/window-cleaning.jpg";
 import Product, { type ProductProps } from "./Product";
 import OpenSection from "../../ui/OpenSection";
 import styles from "./Offer.module.scss";
