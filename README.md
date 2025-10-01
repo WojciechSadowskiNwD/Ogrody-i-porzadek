@@ -1,69 +1,33 @@
-# React + TypeScript + Vite
+# Ogrody i porządek
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Presentation of a fully responsive RWD website, built based on the mobile first rule, dedicated to gardening and cleaning services. SPA (Single Page Application) with home and contact pages, with an emphasis on speed, proper handling of static resources, and implementation on GitHub Pages.
 
-Currently, two official plugins are available:
+## Project goals:
+- preparation of a lightweight, attractive, responsive offer page with the addition of smooth framer-motion animations,
+- configuration of a reliable build and hosting on GitHub Pages,
+- correct management of resource paths (images) when hosting in a subdirectory,
+- Demonstration of skills in React, React Router, Redux toolkit, TypeScript, and custom hook creation.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technology stack:
+- React 19 + TypeScript 5,
+- Vite 7 (fast dev server and bundling),
+- React Router (SPA with basename),
+- Redux Toolkit (global status – prepared for further development),
+- Sass/SCSS (layout + responsiveness, custom mixins, module files, variables),
+- Framer Motion (micro-interaction animations),
+- * Mechanics of sending data from a form (Node, Express—a little bit of backend—but this is not my area of expertise yet, so I used external help here) *
 
-## Expanding the ESLint configuration
+ ## Key features:
+ - Responsive layout and typography (breakpoint mixins),
+ - DOPISAĆ JUTRO
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Zrzuty ekranu
+- Muszę wstawić zrzuty w projekcie
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## How to run this project locally:
+* You need Node 18+
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1) Get clone the repository:
+2. Type in terminal console:
+- npm install
+- npm run dev
