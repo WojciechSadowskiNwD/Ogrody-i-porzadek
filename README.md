@@ -134,10 +134,10 @@ This project is configured to run on GitHub Pages.
 You can automate this using the gh-pages package or GitHub Actions.
 
 6.	Ensure basename is set in React Router for proper routing:
-   ```jsx
-  <BrowserRouter basename="/Ogrody-i-porzadek">
-   	 <App />
-  </BrowserRouter>
+    ```jsx
+     <BrowserRouter basename="/Ogrody-i-porzadek">
+      	 <App />
+     </BrowserRouter>
 
 
 ## 📄 License
