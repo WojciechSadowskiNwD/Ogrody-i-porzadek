@@ -41,7 +41,7 @@ export const ReviewDesktop: React.FC = () => {
 				<div className={styles.imgFrame}>
 					<img className={styles.img} src={img2} />
 				</div>
-				<ReviewCardMini
+				<ReviewCardMini 
 					text="Firma Pana Pawła to prawdziwi profesjonaliści — od założenia trawnika i nawadniania, przez przycinanie krzewów i drzew, po przygotowanie ogrodu do zimy. Gdy przyszła zima, bez problemu zajęli się też odśnieżaniem. Bardzo polecam za solidność, dokładność i miłą obsługę."
 					name="Robert Opolski"
 				/>

@@ -18,7 +18,6 @@ export default function OpenSection({
 	afterSpan,
 	children,
 }: OpenSectionProps) {
-	console.log(children);
 
 	const smallTxt: CSSProperties =
 		beforeSpan.length <= 60

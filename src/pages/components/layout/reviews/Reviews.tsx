@@ -4,7 +4,7 @@ import ReviewBox from "./ReviewBox";
 export default function Reviews() {
 	return (
 		<section>
-			<OpenSection
+			<OpenSection 
 				title="Opinie"
 				beforeSpan="Przekonaj się co mówią o nas obsłużeni klienci."
 			/>

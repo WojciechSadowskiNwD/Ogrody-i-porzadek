@@ -9,6 +9,7 @@ import ConfirmSent from "./ConfirmSent";
 import { AnimatePresence } from "framer-motion";
 import styles from "./Form.module.scss";
 
+
 type FormProps = ComponentPropsWithoutRef<"form">;
 
 export default function Form({ children }: FormProps) {

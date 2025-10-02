@@ -2,11 +2,11 @@ import projectImg from "../../../components/photos/garden-design-small.jpg";
 import createImg from "../../../components/photos/seedling.jpg";
 import cuttingImg from "../../../components/photos/garden-cutting.jpg";
 import cleaningImg from "../../../components/photos/window-cleaning.jpg";
-import Product, { type ProductProps } from "./Product";
-import OpenSection from "../../ui/OpenSection";
-import styles from "./Offer.module.scss";
-import { motion, type Variants } from "framer-motion";
 import { useEffect, useState } from "react";
+import OpenSection from "../../ui/OpenSection";
+import Product, { type ProductProps } from "./Product";
+import { motion, type Variants } from "framer-motion";
+import styles from "./Offer.module.scss";
 
 const productsData: ProductProps[] = [
 	{
