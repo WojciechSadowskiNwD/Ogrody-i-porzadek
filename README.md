@@ -1,33 +1,129 @@
-# Ogrody i porządek
+# Ogrody i porządek (Gardens & Cleaning)
+Demo - live version available at:
+[**Ogrody i porządek – GitHub Pages Demo**](https://wojciechsadowskinwd.github.io/Ogrody-i-porzadek/)
 
-Presentation of a fully responsive RWD website, built based on the mobile first rule, dedicated to gardening and cleaning services. SPA (Single Page Application) with home and contact pages, with an emphasis on speed, proper handling of static resources, and implementation on GitHub Pages.
+A fully responsive RWD website, designed for mobile devices, dedicated to gardening and cleaning services.  
+It is a single-page application (SPA) with a home page and a contact page, designed with an emphasis on performance, proper handling of static resources, TypeScript implementation, and deployment on GitHub Pages.
 
-## Project goals:
-- preparation of a lightweight, attractive, responsive offer page with the addition of smooth framer-motion animations,
-- configuration of a reliable build and hosting on GitHub Pages,
-- correct management of resource paths (images) when hosting in a subdirectory,
-- Demonstration of skills in React, React Router, Redux toolkit, TypeScript, and custom hook creation.
+### Project Goals
+- Build a lightweight, attractive, responsive landing page enhanced with smooth animations (Framer Motion)  
+- Configure a reliable build process and hosting on GitHub Pages  
+- Ensure correct management of static assets (e.g., images) when hosting in a subdirectory  
+- Demonstrate practical skills in React, React Router, Redux Toolkit, TypeScript, and custom hook development  
 
-## Technology stack:
-- React 19 + TypeScript 5,
-- Vite 7 (fast dev server and bundling),
-- React Router (SPA with basename),
-- Redux Toolkit (global status – prepared for further development),
-- Sass/SCSS (layout + responsiveness, custom mixins, module files, variables),
-- Framer Motion (micro-interaction animations),
-- * Mechanics of sending data from a form (Node, Express—a little bit of backend—but this is not my area of expertise yet, so I used external help here) *
+### Technology Stack
+- **React 19 + TypeScript 5**  
+- **Vite 7** – fast dev server and bundler  
+- **React Router** – SPA routing with `basename` support  
+- **Redux Toolkit** – global state management (prepared for further extension)  
+- **Sass/SCSS** – layout, responsiveness, custom mixins, module files, and variables  
+- **Framer Motion** – micro-interaction animations  
+- **Form submission mechanics** – basic backend using Node + Express (implemented with external support)  
 
- ## Key features:
- - Responsive layout and typography (breakpoint mixins),
- - DOPISAĆ JUTRO
+## Technologies and Solutions Used in the Project
+This project was built with a modern React/TypeScript stack.  
+Below is an overview of the libraries, React hooks, custom hooks, TypeScript features, and SCSS techniques applied in the codebase.  
+The list highlights both the tools used and the specific language/React features I worked with, so you can quickly see the scope of technologies applied in practice.
 
-## Zrzuty ekranu
-- Muszę wstawić zrzuty w projekcie
+### Libraries
+- **react-redux** – State management
+- **react-router-dom** – Routing
+- **hamburger-react** – Animated hamburger menu
+- **framer-motion** – Animations
 
-## How to run this project locally:
-* You need Node 18+
+#### Core React
+- **useState** – Stores and updates local component state  
+- **useEffect** – Handles side effects (e.g. data fetching, subscriptions, DOM updates) after rendering  
+- **useCallback** – Memoizes functions to prevent unnecessary re-creations on each render  
+- **useMemo** – Memoizes computed values to avoid redundant recalculations  
+- **useRef** – Persists mutable values across renders (e.g. DOM element references)  
 
-1) Get clone the repository:
-2. Type in terminal console:
-- npm install
-- npm run dev
+#### React Router
+- **useLocation** – Provides information about the current route (path, query params)  
+- **useNavigate** – Enables programmatic navigation between routes  
+
+#### React Redux
+- **useDispatch** – Returns the `dispatch` function to send actions to the Redux store  
+- **useSelector** – Selects data from the Redux store and subscribes to changes  
+
+### Custom Hooks
+- **useAutoHideTopbar** – Automatically hides/shows the top bar while scrolling  
+- **useDesktopNav** – Detects desktop mode based on window width (default breakpoint: 768px)  
+- **useInView** – Observes element visibility in the viewport. Returns a `ref` and an `isVisible` flag (true when at least 20% is visible). Used mainly for triggering animations. Runs once per element.  
+- **useScrollTo** – Smoothly scrolls to a specific element by its ID (anchor-like behavior)  
+- **useScrollToTop** – Scrolls to the top of the page whenever the route changes  
+- **redux.ts** – Typed versions of Redux hooks (`useDispatch`, `useSelector`) bound to the app’s store (`RootState`, `AppDispatch`)  
+
+### TypeScript
+- Basic types (`string`, `number`, `boolean`, `null`, `undefined`)  
+- Type aliases, interfaces  
+- Union types, generics (`<T>`)  
+- Optional properties (`prop?: type`)  
+- Type assertions (`as`)  
+- Utility types (`ReturnType`, `typeof`, `extends`)  
+- Typing React props & events (`ReactNode`, `FormEvent`, `HTMLInputElement`, `ComponentPropsWithoutRef`)  
+- `CSSProperties` (typing for inline styles)  
+- Redux Toolkit typing (`RootState`, `AppDispatch`, `PayloadAction`, `TypedUseSelectorHook`)  
+- Import/export types  
+- Framer Motion `Variants`  
+
+### SCSS (Sass)
+- Variables (`$variable`)  
+- Mixins (`@mixin ...`)  
+- Module system (`@use`, `@forward`)  
+- CSS Modules integration (`*.module.scss`)  
+
+
+## Installation
+
+To run the project locally:
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/WojciechSadowskiNwD/Ogrody-i-porzadek.git
+   cd Ogrody-i-porzadek
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+
+3. Start the development Server:
+   ```bash
+   npm run dev (path ‘server’ - backend)
+   npm run dev (path ‘src’ - frontend)
+  *	The app will be available at http://localhost:5173 by default.
+
+4. Build for production:
+   ```bash
+   npm run build
+  *	The optimized production files will be created in the dist/ directory.
+
+## Deployment (GitHub Pages)
+This project is configured to run on GitHub Pages.
+
+1.	Update the vite.config.ts file to set the correct base option (subdirectory path):
+    ```jsx
+    export default defineConfig({
+    base: "/Ogrody-i-porzadek/",
+    plugins: [react()],
+    });
+
+3.	Build the project:
+    ```bash
+    npm run build
+
+5.	Deploy the contents of the dist/ folder to the gh-pages branch.
+You can automate this using the gh-pages package or GitHub Actions.
+
+6.	Ensure basename is set in React Router for proper routing:
+   ```jsx
+  <BrowserRouter basename="/Ogrody-i-porzadek">
+   	 <App />
+  </BrowserRouter>
+
+
+
+
+
+
