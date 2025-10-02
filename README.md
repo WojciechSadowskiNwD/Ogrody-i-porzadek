@@ -73,6 +73,20 @@ The list highlights both the tools used and the specific language/React features
 - Module system (`@use`, `@forward`)  
 - CSS Modules integration (`*.module.scss`)  
 
+## Screenshots
+### Mobile views
+![Mobile 1](docs/screenshot_mobile_1.jpg)
+![Mobile 2](docs/screenshot_mobile_2.jpg)
+
+### Desktop views
+![Desktop 1](docs/screenshot_1.png)
+![Desktop 2](docs/screenshot_2.jpg)
+![Desktop 3](docs/screenshot_3.jpg)
+![Desktop 4](docs/screenshot_4.jpg)
+![Desktop 5](docs/screenshot_5.jpg)
+![Desktop 6](docs/screenshot_6.jpg)
+![Desktop 7](docs/screenshot_7.jpg)
+
 
 ## Installation
 
