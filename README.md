@@ -78,12 +78,13 @@ The list highlights both the tools used and the specific language/React features
 ![Mobile 1](docs/screenshots/screenshot_mobile_1.jpg)
 ![Mobile 2](docs/screenshots/screenshot_mobile_2.jpg)
 
-### Desktop views
+### Desktop views (samples – Homepage)
 ![Desktop 1](docs/screenshots/screenshot_1.png)
 ![Desktop 2](docs/screenshots/screenshot_2.jpg)
 ![Desktop 3](docs/screenshots/screenshot_3.jpg)
 ![Desktop 4](docs/screenshots/screenshot_4.jpg)
 ![Desktop 5](docs/screenshots/screenshot_5.jpg)
+#### Contact page
 ![Desktop 6](docs/screenshots/screenshot_6.jpg)
 ![Desktop 7](docs/screenshots/screenshot_7.jpg)
 
@@ -104,8 +105,10 @@ To run the project locally:
 
 3. Start the development Server:
    ```bash
-   npm run dev (path ‘server’ - backend)
-   npm run dev (path ‘src’ - frontend)
+   # backend (server)
+   npm run dev
+   # frontend (src)
+   npm run dev
   *	The app will be available at http://localhost:5173 by default.
 
 4. Build for production:
@@ -137,7 +140,7 @@ You can automate this using the gh-pages package or GitHub Actions.
   </BrowserRouter>
 
 
+## 📄 License
 
-
-
-
+This project is open source and licensed under the MIT License.  
+You are free to use, modify, and distribute it under the terms of this license.
